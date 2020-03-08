@@ -24,14 +24,14 @@ def get_catalog_file_path(message, magic_value):
             crMagicValue.chmCatalogFileSearchPattern)
         catalogFileListCount = 0
 
-        for catalogFile in catalog_file_list:
-            catalogFileListCount = catalogFileListCount + 1
+        for catalog_file in catalog_file_list:
+            catalog_file_list_count = catalog_file_list_count + 1
 
             if catalogFileListCount > 1:
                 crPrintCyan(crMessage.errMultipleCatalogFile)
                 raise EnvironmentError(crMessage.errMultipleCatalogFile)
 
-            catalog_file_path = catalogFile
+            catalog_file_path = catalog_file
 
         if catalogFileListCount is 0:
             crPrintCyan(crMessage.errCatalogFileNotFound)
