@@ -3,6 +3,7 @@ import configparser
 import logging
 
 from pathlib import Path as plPath
+from os import path as osPath
 
 # My
 from crLog import crPrintCyan
@@ -10,6 +11,7 @@ from crLocaleHeader import *
 from crMagicValueHeader import *
 from crMessageHeader import *
 
+# Config object placeholder
 environment_config = configparser.ConfigParser()
 magic_value_config = configparser.ConfigParser()
 message_config = configparser.ConfigParser()
