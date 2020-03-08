@@ -1,0 +1,1 @@
+from crLocale import get_environment_locale
