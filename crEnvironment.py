@@ -16,7 +16,7 @@ from crLog import crPrintCyan
 # Scan and get catalog file path
 
 
-def getCatalogFilePath():
+def _getCatalogFilePath():
     catalogFilePath = None
 
     try:

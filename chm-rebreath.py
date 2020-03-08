@@ -17,7 +17,7 @@ logging.basicConfig(filename=crMagicValue.logfileName)
 
 
 def main():
-    print(getCatalogFilePath())
+    print(_getCatalogFilePath())
 
 
 #}
