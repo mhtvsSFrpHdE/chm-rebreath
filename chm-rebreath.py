@@ -19,7 +19,7 @@ environment_init(message_config, magic_value_config)
 
 
 def main():
-    print(magic_value_config['dev']['config_version'])
+    print(get_catalog_file_path())
 
 
 #}
