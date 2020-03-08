@@ -1,1 +1,1 @@
-from crEnvironment import _getCatalogFilePath
+from crEnvironment import get_catalog_file_path
