@@ -22,6 +22,14 @@ def _load_environment_config():
     environment_config.read(environment_config_path)
 
 
+def _load_message_config():
+    global message_config
+
+    message_config_path = plPath(
+        environment_config['message']['config_message_path'])
+    message_config.read(message_config_path)
+
+
 def _load_magic_value_config():
     global magic_value_config
 
@@ -30,12 +38,7 @@ def _load_magic_value_config():
     magic_value_config.read(magic_value_config_path)
 
 
-def _load_config_message():
-    global message_config
 
-    message_config_path = plPath(
-        environment_config['message']['config_message_path'])
-    magic_value_config.read(message_config_path)
 
 # Wrap
 
