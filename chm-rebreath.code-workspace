@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"magicstack.magicpython",
+			"tabnine.tabnine-vscode"
+		]
+	}
+}
