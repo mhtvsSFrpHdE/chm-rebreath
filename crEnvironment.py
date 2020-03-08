@@ -8,8 +8,6 @@ import logging
 
 # My
 import crDevInput  # Information used while development
-import crMagicValue
-import crMessage
 
 from crLog import crPrintCyan
 
@@ -30,26 +28,32 @@ def environment_init(message_config, magic_value_config):
 # Scan and get catalog file path
 
 
-def get_catalog_file_path(message, magic_value):
+def get_catalog_file_path():
+    global magic_value_config_local
+    global message_config_local
+
     catalog_file_path = None
 
     try:
-        catalogFileList = pathlib.Path(crDevInput.unpackedChmFolder).glob(
-            crMagicValue.chmCatalogFileSearchPattern)
-        catalogFileListCount = 0
+        catalog_file_list = pathlib.Path(crDevInput.unpackedChmFolder).glob(
+            magic_value_config_local['dev']['chm_catalog_file_search_pattern'] + magic_value_config_local['dev']['chm_catalog_file_extension'])
+        catalog_file_list_count = 0
 
         for catalog_file in catalog_file_list:
             catalog_file_list_count = catalog_file_list_count + 1
 
-            if catalogFileListCount > 1:
-                crPrintCyan(crMessage.errMultipleCatalogFile)
-                raise EnvironmentError(crMessage.errMultipleCatalogFile)
+            if catalog_file_list_count > 1:
+                crPrintCyan(
+                    message_config_local['err']['multiple_catalog_file'])
+                raise EnvironmentError(
+                    message_config_local['err']['multiple_catalog_file'])
 
             catalog_file_path = catalog_file
 
-        if catalogFileListCount is 0:
-            crPrintCyan(crMessage.errCatalogFileNotFound)
-            raise EnvironmentError(crMessage.errCatalogFileNotFound)
+        if catalog_file_list_count is 0:
+            crPrintCyan(message_config_local['err']['catalog_file_not_found'])
+            raise EnvironmentError(
+                message_config_local['err']['catalog_file_not_found'])
     except:
         logging.exception(__name__)
         raise
