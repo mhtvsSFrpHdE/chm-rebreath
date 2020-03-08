@@ -132,3 +132,6 @@ crDevInput.py
 
 # Visual Studio Code
 .vscode/settings.json
+
+# Test some idea fast
+idea.py
