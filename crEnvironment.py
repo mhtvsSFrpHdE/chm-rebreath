@@ -36,7 +36,7 @@ def get_catalog_file_path():
 
     try:
         catalog_file_list = pathlib.Path(crDevInput.unpackedChmFolder).glob(
-            magic_value_config_local['dev']['chm_catalog_file_search_pattern'] + magic_value_config_local['dev']['chm_catalog_file_extension'])
+            magic_value_config_local['dev']['chm_catalog_file_search_pattern'])
         catalog_file_list_count = 0
 
         for catalog_file in catalog_file_list:
