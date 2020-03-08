@@ -13,6 +13,20 @@ import crMessage
 
 from crLog import crPrintCyan
 
+# Module scope config
+magic_value_config_local = None
+message_config_local = None
+
+# Receive config
+
+
+def environment_init(message_config, magic_value_config):
+    global magic_value_config_local
+    global message_config_local
+
+    magic_value_config_local = magic_value_config
+    message_config_local = message_config
+
 # Scan and get catalog file path
 
 
