@@ -5,6 +5,7 @@ import logging
 from pathlib import Path as plPath
 
 # My
+from crLog import crPrintCyan
 from crLocaleHeader import *
 from crMagicValueHeader import *
 
@@ -18,8 +19,14 @@ message_config = configparser.ConfigParser()
 def _load_environment_config():
     global environment_config
 
-    # Congratulations, this should be the only hardcoded variable
     environment_config_path = plPath('environment.ini')
+
+    if osPath.exists(environment_config_path) is False:
+        # Message config not yet loaded
+        error_message = "Config file missing: " + str(environment_config_path)
+        crPrintCyan(error_message)
+        raise EnvironmentError(error_message)
+
     environment_config.read(environment_config_path)
 
 
@@ -28,6 +35,13 @@ def _load_message_config():
 
     message_config_path = plPath(
         environment_config['message']['config_message_path'])
+
+    if osPath.exists(message_config_path) is False:
+        # Message config not yet loaded
+        error_message = "Config file missing: " + str(message_config_path)
+        crPrintCyan(error_message)
+        raise EnvironmentError(error_message)
+
     message_config.read(message_config_path)
 
 
