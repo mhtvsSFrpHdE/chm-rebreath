@@ -47,12 +47,18 @@ def _load_message_config():
 
 def _load_magic_value_config():
     global magic_value_config
+    global message_config
 
     magic_value_config_path = plPath(
         environment_config['dev']['configPathMagicValue'])
+
+    if osPath.exists(magic_value_config_path) is False:
+        error_message = message_config['err']['software_broken'] + \
+            str(magic_value_config_path)
+        crPrintCyan(error_message)
+        raise EnvironmentError(error_message)
+
     magic_value_config.read(magic_value_config_path)
-
-
 
 
 # Wrap
