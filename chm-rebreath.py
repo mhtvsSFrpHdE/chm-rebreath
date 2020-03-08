@@ -1,23 +1,25 @@
 # 3rd
-import pathlib  # Path
-import logging
+import logging  # NOQA: E402
+#
+# Prepare logging at the very beginning
+# We do not dealing with external error, just print and crash
+logging.basicConfig(filename="log.txt")  # NOQA: E402
 
 from bs4 import BeautifulSoup  # HTML parsing
 
 # My
-import crMagicValue
+from crConfigHeader import *
+from crEnvironment import *
 
-from crEnvironmentHeader import *
+# Initialize environment
+environment_init(message_config, magic_value_config)
 
-# Initialize log file
-# We do not dealing with external error, just print and crash
-logging.basicConfig(filename=crMagicValue.logfileName)
 
 # int main () {
 
 
 def main():
-    print(get_catalog_file_path())
+    print(magic_value_config['dev']['config_version'])
 
 
 #}
