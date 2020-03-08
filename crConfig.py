@@ -53,7 +53,7 @@ def _load_magic_value_config():
     global message_config
 
     magic_value_config_path = plPath(
-        environment_config['dev']['configPathMagicValue'])
+        environment_config['dev']['magic_value_config_path'])
 
     if osPath.exists(magic_value_config_path) is False:
         error_message = message_config['err']['software_broken'] + \
