@@ -1,5 +1,6 @@
 # 3rd
 import configparser
+import logging
 
 from pathlib import Path as plPath
 
@@ -44,16 +45,20 @@ def _load_magic_value_config():
 
 
 def config_init():
-    # Environment
-    #
-    _load_environment_config()
-    # Apply locale
-    global environment_config
-    environment_config = get_environment_locale(environment_config)
+    try:
+        # Environment
+        #
+        _load_environment_config()
+        # Apply locale
+        global environment_config
+        environment_config = get_environment_locale(environment_config)
 
-    # Magic value
-    #
-    _load_magic_value_config()
-    # Apply preprocessor
-    global magic_value_config
-    magic_value_config = get_preprocessed_magic_value(magic_value_config)
+        # Magic value
+        #
+        _load_magic_value_config()
+        # Apply preprocessor
+        global magic_value_config
+        magic_value_config = get_preprocessed_magic_value(magic_value_config)
+    except:
+        logging.exception(__name__)
+        raise
