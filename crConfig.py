@@ -8,6 +8,7 @@ from pathlib import Path as plPath
 from crLog import crPrintCyan
 from crLocaleHeader import *
 from crMagicValueHeader import *
+from crMessageHeader import *
 
 environment_config = configparser.ConfigParser()
 magic_value_config = configparser.ConfigParser()
@@ -72,6 +73,13 @@ def config_init():
         # Apply locale
         global environment_config
         environment_config = get_environment_locale(environment_config)
+
+        # Message
+        #
+        _load_message_config()
+        # Apply preprocessor
+        global message_config
+        message_config = get_preprocessed_message(message_config)
 
         # Magic value
         #
