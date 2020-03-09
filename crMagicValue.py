@@ -1,4 +1,4 @@
-def _my_magic_value_preprocessor(magic_value_config):
+def _preprocess_chm_file_search_pattern(magic_value_config):
     mdev = magic_value_config['dev']
 
     magic_value_config['dev']['chm_catalog_file_search_pattern'] = mdev['chm_catalog_file_search_pattern'] + \
@@ -13,4 +13,4 @@ def _my_magic_value_preprocessor(magic_value_config):
 
 
 def get_preprocessed_magic_value(magic_value_config):
-    return _my_magic_value_preprocessor(magic_value_config)
+    return _preprocess_chm_file_search_pattern(magic_value_config)
