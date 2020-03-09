@@ -32,7 +32,7 @@ def _my_locale_parser(config_environment):
 
     return config_environment
 
-# Wrap the process
+# Wrap
 
 
 def get_environment_locale(config_environment):
