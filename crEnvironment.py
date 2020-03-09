@@ -18,7 +18,7 @@ message_config_local = None
 # Receive config
 
 
-def environment_init(message_config, magic_value_config):
+def init_environment(message_config, magic_value_config):
     global magic_value_config_local
     global message_config_local
 

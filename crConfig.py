@@ -67,7 +67,7 @@ def _load_magic_value_config():
 # Wrap
 
 
-def config_init():
+def init_config():
     try:
         # Environment
         #

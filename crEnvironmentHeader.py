@@ -1,2 +1,2 @@
-from crEnvironment import environment_init
+from crEnvironment import init_environment
 from crEnvironment import get_catalog_file_path

@@ -7,6 +7,6 @@ from crConfig import environment_config
 from crConfig import magic_value_config
 from crConfig import message_config
 
-from crConfig import config_init as _config_init
+from crConfig import init_config as _init_config
 
-_config_init()
+_init_config()
