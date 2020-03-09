@@ -10,16 +10,19 @@ from bs4 import BeautifulSoup  # HTML parsing
 # My
 from crConfigHeader import *
 from crEnvironmentHeader import *
+from crCoreHeader import *
 
 # Initialize
 init_environment(message_config, magic_value_config)
-
+init_core_get_catalog(message_config)
 
 # int main () {
 
 
 def main():
-    print(get_catalog_file_path())
+    with open(get_catalog_file_path(), "rb") as chm_catalog_file:
+        mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
+        catalog_node = get_catalog_node(mySoup)
 
 
 #}
