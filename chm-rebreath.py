@@ -9,10 +9,10 @@ from bs4 import BeautifulSoup  # HTML parsing
 
 # My
 from crConfigHeader import *
-from crEnvironment import *
+from crEnvironmentHeader import *
 
 # Initialize environment
-environment_init(message_config, magic_value_config)
+init_environment(message_config, magic_value_config)
 
 
 # int main () {
