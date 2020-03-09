@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup  # HTML parsing
 from crConfigHeader import *
 from crEnvironmentHeader import *
 
-# Initialize environment
+# Initialize
 init_environment(message_config, magic_value_config)
 
 
