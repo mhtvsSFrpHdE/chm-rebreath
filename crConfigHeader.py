@@ -1,5 +1,5 @@
-# This file exposes config "object" to global level
-# And load them automatically
+# This file exposes config "object" for use,
+# and load them from disk automatically
 #
 # The entire process is wrapped good,
 # so the other modules don't need to worry about how to deal with it
