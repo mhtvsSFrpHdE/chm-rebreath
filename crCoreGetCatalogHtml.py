@@ -20,6 +20,19 @@ message_config_local = None
 #     with tag("body"):
 #         with tag("p"):
 
+# Convert catalog node to HTML object rescue
+
+
+def _process_catalog_node(catalog_node, doc, tag, text):
+    with tag("li"):
+        with tag("span", klass="caret"):
+            text(catalog_node.catalog_name)
+        if catalog_node.have_sub_node:
+            with tag("ul", klass="nested"):
+                for child in catalog_node.sub_node_list:
+                    _process_catalog_node(child, doc, tag, text)
+
+
 # Wrap
 
 
@@ -34,8 +47,8 @@ def get_catalog_html_text(catalog_node):
             with tag("title"):
                 text("Hello World")
         with tag("body"):
-            with tag("p"):
-                text("Hello World")
+            with tag("div"):
+                _process_catalog_node(catalog_node, doc, tag, text)
 
     return doc.getvalue()
 
