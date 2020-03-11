@@ -1,2 +1,2 @@
-from crCoreGetCatalog import get_catalog_node
-from crCoreGetCatalog import init_core_get_catalog
+from crCoreGetCatalogNode import get_catalog_node
+from crCoreGetCatalogNode import init_core_get_catalog_node

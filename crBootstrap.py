@@ -12,4 +12,4 @@ from crCoreHeader import *
 
 # Initialize
 init_environment(message_config, magic_value_config)
-init_core_get_catalog(message_config)
+init_core_get_catalog_node(message_config)
