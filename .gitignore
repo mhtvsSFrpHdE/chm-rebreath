@@ -130,6 +130,9 @@ log.txt
 # Temp info
 crDevInput.py
 
+# Temp file
+demo.html
+
 # Visual Studio Code
 .vscode/settings.json
 
