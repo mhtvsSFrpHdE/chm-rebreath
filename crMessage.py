@@ -23,7 +23,7 @@ def _preprocess_message_config(message_config):
 
 # Some message entry need to preprocess before use
 #
-# TODO: use a loop to replace all the symbols
+# NEEDHELP: use a loop to replace all the symbols
 #
 # Update: too bad, failed to use loop to update the values
 # It seems configparser doesn't support iterate through it and update value
