@@ -2,7 +2,7 @@
 import logging
 
 # My
-from crLogHeader import *
+from crLog import crPrintCyan
 
 # This file exposes logging related code for use,
 # color print may belong here but need more discuss,
