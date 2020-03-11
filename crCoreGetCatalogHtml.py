@@ -51,6 +51,10 @@ def get_catalog_html_text(catalog_node):
             with tag("div"):
                 _process_catalog_node(catalog_node, doc, tag, text)
 
+    # TODO: Test purpose code, move to other place later
+    with open("demo.html", "w+", encoding="utf-8") as demoHtmlFile:
+        demoHtmlFile.write(doc.getvalue())
+
     return doc.getvalue()
 
 # Receive config

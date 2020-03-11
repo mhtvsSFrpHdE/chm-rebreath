@@ -12,7 +12,7 @@ def main():
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
         catalog_node = get_catalog_node(mySoup)
 
-        print(get_catalog_html_text(catalog_node))
+        get_catalog_html_text(catalog_node)
 
 
 #}
