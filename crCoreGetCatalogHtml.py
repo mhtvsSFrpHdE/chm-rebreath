@@ -22,6 +22,9 @@ message_config_local = None
 
 # Convert catalog node to HTML object rescue
 
+# This code example comes from
+# https://www.w3schools.com/howto/howto_js_treeview.asp
+
 
 def _process_catalog_node(catalog_node, doc, tag, text):
     with tag("li"):
