@@ -1,15 +1,9 @@
 # 3rd
-
-# Environment
 import pathlib  # Path
 
-# Log
-import logging
-
 # My
+from crLogHeader import *
 import crDevInput  # Information used while development
-
-from crLog import crPrintCyan
 
 # Module scope config
 magic_value_config_local = None

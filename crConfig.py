@@ -1,12 +1,11 @@
 # 3rd
 import configparser
-import logging
 
 from pathlib import Path as plPath
 from os import path as osPath
 
 # My
-from crLog import crPrintCyan
+from crLogHeader import *
 from crLocaleHeader import *
 from crMagicValueHeader import *
 from crMessageHeader import *

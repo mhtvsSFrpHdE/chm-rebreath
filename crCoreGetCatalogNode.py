@@ -1,8 +1,5 @@
-# 3rd
-import logging  # NOQA: E402
-
 # My
-from crLog import crPrintCyan
+from crLogHeader import *
 
 # Receive a BeautifulSoup soup object,
 # then try to parse it to a rescue catalog node
