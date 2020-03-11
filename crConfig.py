@@ -11,9 +11,9 @@ from crMagicValueHeader import *
 from crMessageHeader import *
 
 # Config object placeholder
-environment_config = configparser.ConfigParser()
-magic_value_config = configparser.ConfigParser()
-message_config = configparser.ConfigParser()
+environment_config = configparser.RawConfigParser()
+magic_value_config = configparser.RawConfigParser()
+message_config = configparser.RawConfigParser()
 
 # Read config files
 
