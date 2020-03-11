@@ -12,11 +12,10 @@ def _preprocess_message_config(message_config):
         # %nl% is next line, refer to \n
         return myString.strip('"""').replace("%nl%", "\n")
 
-    message_config['err']['software_broken'] = mErr['software_broken'].strip(
-        '"""')
+    message_config['err']['software_broken'] = ps(mErr['software_broken'])
+    message_config['err']['chm_catalog_multiple_sub_node_ul'] = ps(
+        mErr['chm_catalog_multiple_sub_node_ul'])
 
-    message_config['err']['chm_catalog_multiple_sub_node_ul'] = mErr['chm_catalog_multiple_sub_node_ul'].strip(
-        '"""').replace("%nl%", "\n")
     mHtml = message_config['html_catalog']
     message_config['html_catalog']['title'] = ps(mHtml['title'])
 
