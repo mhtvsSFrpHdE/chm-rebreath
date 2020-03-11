@@ -1,3 +1,14 @@
+# Process message when use
+
+
+def crPm(myString):
+    myString.strip('"""').replace("%nl%", "\n")
+
+    return myString
+
+# Preprocess message
+
+
 def _preprocess_message_config(message_config):
     mErr = message_config['err']
     mHtml = message_config['html_catalog']
