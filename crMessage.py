@@ -3,7 +3,6 @@
 
 def _preprocess_message_config(message_config):
     mErr = message_config['err']
-    mHtml = message_config['html_catalog']
     # Try to make process close together and short the method name
     # Use namespace to avoid conflict
     def ps(myString):
@@ -15,10 +14,11 @@ def _preprocess_message_config(message_config):
 
     message_config['err']['software_broken'] = mErr['software_broken'].strip(
         '"""')
-    message_config['html_catalog']['title'] = mHtml['title'].strip('"""')
 
     message_config['err']['chm_catalog_multiple_sub_node_ul'] = mErr['chm_catalog_multiple_sub_node_ul'].strip(
         '"""').replace("%nl%", "\n")
+    mHtml = message_config['html_catalog']
+    message_config['html_catalog']['title'] = ps(mHtml['title'])
 
     return message_config
 
