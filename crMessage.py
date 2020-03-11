@@ -1,4 +1,4 @@
-def _my_message_preprocessor(message_config):
+def _preprocess_message_config(message_config):
     mErr = message_config['err']
 
     # TODO: use a loop to replace all the symbols
@@ -18,4 +18,4 @@ def _my_message_preprocessor(message_config):
 
 
 def get_preprocessed_message(message_config):
-    return _my_message_preprocessor(message_config)
+    return _preprocess_message_config(message_config)
