@@ -45,7 +45,8 @@ def get_catalog_html_text(catalog_node):
         with tag("head"):
             doc.stag("meta", charset="utf-8")
             with tag("title"):
-                text("Hello World")
+                text(catalog_node.catalog_name +
+                     message_config_local['html_catalog']['title'])
         with tag("body"):
             with tag("div"):
                 _process_catalog_node(catalog_node, doc, tag, text)
