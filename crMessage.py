@@ -2,7 +2,6 @@
 
 
 def _preprocess_message_config(message_config):
-    mErr = message_config['err']
     # Try to make process close together and short the method name
     # Use namespace to avoid conflict
     def ps(myString):
@@ -12,6 +11,7 @@ def _preprocess_message_config(message_config):
         # %nl% is next line, refer to \n
         return myString.strip('"""').replace("%nl%", "\n")
 
+    mErr = message_config['err']
     message_config['err']['software_broken'] = ps(mErr['software_broken'])
     message_config['err']['chm_catalog_multiple_sub_node_ul'] = ps(
         mErr['chm_catalog_multiple_sub_node_ul'])
