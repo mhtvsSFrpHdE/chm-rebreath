@@ -47,11 +47,14 @@ def get_catalog_html_text(catalog_node):
     doc.asis("<!DOCTYPE html>")
     with tag("html"):
 
+        # Head & Meta
         with tag("head"):
             doc.stag("meta", charset="utf-8")
+            # Title
             with tag("title"):
                 text(catalog_node.catalog_name +
                      message_config_local['html_catalog']['title'])
+            # CSS
             doc.stag("link", rel="stylesheet",
                      href=environment_config_local['data_catalog']['css_file_name'])
             # JavaScript
