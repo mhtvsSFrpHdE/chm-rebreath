@@ -54,8 +54,12 @@ def get_catalog_html_text(catalog_node):
                      message_config_local['html_catalog']['title'])
             doc.stag("link", rel="stylesheet",
                      href=environment_config_local['data_catalog']['css_file_name'])
+            # JavaScript
+            with tag("script", type="text/javascript", src=environment_config_local['data_catalog']['js_file_name']):
+                text("")
 
-        with tag("body"):
+        # Body & onLoad method
+        with tag("body", onLoad="catalogOnLoad()"):
             with tag("div"):
                 _process_catalog_node(catalog_node, doc, tag, text)
 
