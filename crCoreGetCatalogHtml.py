@@ -52,6 +52,8 @@ def get_catalog_html_text(catalog_node):
             with tag("title"):
                 text(catalog_node.catalog_name +
                      message_config_local['html_catalog']['title'])
+            doc.stag("link", rel="stylesheet",
+                     href=environment_config_local['data_catalog']['css_file_name'])
 
         with tag("body"):
             with tag("div"):
