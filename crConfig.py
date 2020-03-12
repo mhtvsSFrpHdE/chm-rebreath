@@ -7,6 +7,7 @@ from os import path as osPath
 # My
 from crLogHeader import *
 from crLocaleHeader import *
+from crEnvironmentHeader import *
 from crMagicValueHeader import *
 from crMessageHeader import *
 
@@ -77,6 +78,8 @@ def init_config():
         # Apply locale
         global environment_config
         environment_config = get_environment_locale(environment_config)
+        # Apply preprocessor
+        environment_config = get_preprocessed_environment(environment_config)
 
         # Message
         #

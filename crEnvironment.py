@@ -88,3 +88,17 @@ def get_catalog_html_output_path(catalog_html_title):
         + magic_value_config_local['html']['file_extension'])
 
     return output_file_path
+
+# Some entry need to preprocess before use
+
+
+def get_preprocessed_environment(environment_config):
+    mD = environment_config['data']
+    mDC = environment_config['data_catalog']
+
+    environment_config['data_catalog']['css_file_path'] = mD['root'] + \
+        mDC['root'] + mDC['css_file_name']
+    environment_config['data_catalog']['js_file_path'] = mD['root'] + \
+        mDC['root'] + mDC['js_file_name']
+
+    return environment_config
