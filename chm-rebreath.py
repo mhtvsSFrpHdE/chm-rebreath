@@ -19,3 +19,5 @@ def main():
 
 #}
 main()
+
+logging.info("#========= End properly after main() =#")  # NOQA: E402
