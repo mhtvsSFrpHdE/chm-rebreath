@@ -1,11 +1,11 @@
 def _preprocess_chm_file_search_pattern(magic_value_config):
-    mdev = magic_value_config['dev']
+    mChm = magic_value_config['chm']
 
-    magic_value_config['dev']['chm_catalog_file_search_pattern'] = mdev['chm_catalog_file_search_pattern'] + \
-        mdev['chm_catalog_file_extension']
+    magic_value_config['chm']['catalog_file_search_pattern'] = mChm['catalog_file_search_pattern'] + \
+        mChm['catalog_file_extension']
 
-    magic_value_config['dev']['chm_index_file_search_pattern'] = mdev['chm_index_file_search_pattern'] + \
-        mdev['chm_index_file_extension']
+    magic_value_config['chm']['index_file_search_pattern'] = mChm['index_file_search_pattern'] + \
+        mChm['index_file_extension']
 
     return magic_value_config
 
