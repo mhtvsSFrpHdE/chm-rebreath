@@ -1,5 +1,8 @@
 # 3rd
-import pathlib  # Path
+import os
+
+from pathlib import Path as plPath  # Path
+from os import path as osPath
 
 # My
 from crLogHeader import *
@@ -29,7 +32,7 @@ def get_catalog_file_path():
     catalog_file_path = None
 
     try:
-        catalog_file_list = pathlib.Path(crDevInput.unpackedChmFolder).glob(
+        catalog_file_list = plPath(crDevInput.unpackedChmFolder).glob(
             magic_value_config_local['chm']['catalog_file_search_pattern'])
         catalog_file_list_count = 0
 
