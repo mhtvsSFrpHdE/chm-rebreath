@@ -4,6 +4,9 @@
 # crLog.py: 1
 ansicolors == 1.1.8
 
-# chm-rebreath.py: 8
+# chm-rebreath.py: 2
 # idea.py: 8
 beautifulsoup4 == 4.8.2
+
+# crCoreGetCatalogHtml.py: 2
+yattag == 1.13.2
