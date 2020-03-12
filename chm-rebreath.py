@@ -8,12 +8,14 @@ from crBootstrap import *
 
 
 def main():
-    with open(get_catalog_file_path(), "rb") as chm_catalog_file:
+    with open(get_catalog_chm_file_path(), "rb") as chm_catalog_file:
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
         catalog_node = get_catalog_node(mySoup)
 
-        get_catalog_html_text(catalog_node)
-
+        # TODO: Test purpose code, move to other place later
+        catalog_html_text = get_catalog_html_text(catalog_node)
+        with open(get_catalog_html_output_path(catalog_node.catalog_name), "w+", encoding="utf-8") as catalog_html_file:
+            catalog_html_file.write(catalog_html_text)
 
 #}
 main()
