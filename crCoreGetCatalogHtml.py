@@ -7,6 +7,7 @@ from crLogHeader import *
 # Read these code from bottom to top is suggested
 #
 # Module scope config
+environment_config_local = None
 message_config_local = None
 
 # Empty HTML template
@@ -59,7 +60,9 @@ def get_catalog_html_text(catalog_node):
 # Receive config
 
 
-def init_core_get_catalog_html(message_config):
+def init_core_get_catalog_html(environment_config, message_config):
+    global environment_config_local
     global message_config_local
 
     message_config_local = message_config
+    environment_config_local = environment_config
