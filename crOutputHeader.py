@@ -1,0 +1,2 @@
+from crOutput import init_output
+from crOutput import copy_catalog_html_resource
