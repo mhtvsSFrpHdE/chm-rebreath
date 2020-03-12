@@ -19,5 +19,5 @@ from crOutput import *
 # call the init method here
 init_environment(message_config, magic_value_config)
 init_core_get_catalog_node(message_config)
-init_core_get_catalog_html(message_config)
+init_core_get_catalog_html(environment_config, message_config)
 init_output(environment_config, message_config)
