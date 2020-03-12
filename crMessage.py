@@ -1,7 +1,13 @@
-# Preprocess message
+# Some message entry need to preprocess before use
+#
+# NEEDHELP: use a loop to replace all the symbols
+#
+# Update: too bad, failed to use loop to update the values
+# It seems configparser doesn't support iterate through it and update value
+# Perhaps a stackoverflow can help
 
 
-def _preprocess_message_config(message_config):
+def get_preprocessed_message(message_config):
     # Try to make process close together and short the method name
     # Use namespace to avoid conflict
     def ps(myString):
@@ -20,15 +26,3 @@ def _preprocess_message_config(message_config):
     message_config['html_catalog']['title'] = ps(mHtml['title'])
 
     return message_config
-
-# Some message entry need to preprocess before use
-#
-# NEEDHELP: use a loop to replace all the symbols
-#
-# Update: too bad, failed to use loop to update the values
-# It seems configparser doesn't support iterate through it and update value
-# Perhaps a stackoverflow can help
-
-
-def get_preprocessed_message(message_config):
-    return _preprocess_message_config(message_config)
