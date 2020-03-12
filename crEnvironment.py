@@ -42,6 +42,7 @@ def get_catalog_chm_file_path():
             if catalog_file_list_count > 1:
                 crPrintCyan(
                     message_config_local['err']['multiple_catalog_file'])
+                logging.exception(__name__)
                 raise EnvironmentError(
                     message_config_local['err']['multiple_catalog_file'])
 
@@ -49,6 +50,7 @@ def get_catalog_chm_file_path():
 
         if catalog_file_list_count is 0:
             crPrintCyan(message_config_local['err']['catalog_file_not_found'])
+            logging.exception(__name__)
             raise EnvironmentError(
                 message_config_local['err']['catalog_file_not_found'])
     except:
@@ -68,8 +70,8 @@ def get_root_output_folder_path():
         except:
             error_message = message_config_local['err']['failed_to_create_output_folder']
             crPrintCyan(error_message)
-            logging.exception(EnvironmentError(error_message))
-            raise
+            logging.exception(__name__)
+            raise EnvironmentError(error_message)
 
     return output_folder
 

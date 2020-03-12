@@ -95,6 +95,7 @@ def _process_catalog_li(myLi):
         error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] + str(
             sub_node_list)
         crPrintCyan(error_message)
+        logging.exception(__name__)
         raise NotImplementedError(error_message)
     # Update sub-node status,
     # to make sure there is only one sub-node ul in the current version
@@ -146,6 +147,7 @@ def _process_my_soup(mySoup):
             error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] + str(
                 child)
             crPrintCyan(error_message)
+            logging.exception(__name__)
             raise NotImplementedError(error_message)
         else:
             # Process ul tag found

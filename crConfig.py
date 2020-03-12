@@ -27,6 +27,7 @@ def _load_environment_config():
         # Message config not yet loaded
         error_message = "Config file missing: " + str(environment_config_path)
         crPrintCyan(error_message)
+        logging.exception(__name__)
         raise EnvironmentError(error_message)
 
     environment_config.read(environment_config_path)
@@ -42,6 +43,7 @@ def _load_message_config():
         # Message config not yet loaded
         error_message = "Config file missing: " + str(message_config_path)
         crPrintCyan(error_message)
+        logging.exception(__name__)
         raise EnvironmentError(error_message)
 
     message_config.read(message_config_path)
@@ -58,6 +60,7 @@ def _load_magic_value_config():
         error_message = message_config['err']['software_broken'] + \
             str(magic_value_config_path)
         crPrintCyan(error_message)
+        logging.exception(__name__)
         raise EnvironmentError(error_message)
 
     magic_value_config.read(magic_value_config_path)
