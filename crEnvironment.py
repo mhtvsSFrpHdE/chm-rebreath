@@ -56,3 +56,33 @@ def get_catalog_file_path():
         raise
 
     return catalog_file_path
+
+# Wrap the output folder with pathlib
+
+
+def get_root_output_folder_path():
+    output_folder = plPath(crDevInput.outputFolder)
+    if osPath.exists(output_folder) is False:
+        try:
+            os.mkdir(output_folder)
+        except:
+            error_message = message_config_local['err']['failed_to_create_output_folder']
+            crPrintCyan(error_message)
+            logging.exception(EnvironmentError(error_message))
+            raise
+
+    return output_folder
+
+# Combine serval information to catalog HTML full output path
+
+
+def get_catalog_html_output_path(catalog_html_title):
+    output_folder_path = get_root_output_folder_path()
+    #
+    # Catalog root node name  + `- Catalog` + `.html`
+    output_file_path = output_folder_path.joinpath(
+        catalog_html_title
+        + message_config_local['html_catalog']['title']
+        + magic_value_config_local['html']['file_extension'])
+
+    return output_file_path
