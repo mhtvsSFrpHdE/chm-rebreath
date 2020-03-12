@@ -25,7 +25,7 @@ def init_environment(message_config, magic_value_config):
 # Scan and get catalog file path
 
 
-def get_catalog_file_path():
+def get_catalog_chm_file_path():
     global magic_value_config_local
     global message_config_local
 
