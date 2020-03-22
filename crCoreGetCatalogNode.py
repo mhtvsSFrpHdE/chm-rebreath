@@ -92,8 +92,8 @@ def _process_catalog_li(myLi):
     # Calculate sub-node list length and raise an error if necessary
     sub_node_list_length = len(sub_node_list)
     if sub_node_list_length > 1:
-        error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] + str(
-            sub_node_list)
+        error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
+                        + str(sub_node_list)
         crPrintCyan(error_message)
         logging.exception(__name__)
         raise NotImplementedError(error_message)
@@ -144,8 +144,8 @@ def _process_my_soup(mySoup):
 
         ulCount = ulCount + 1
         if ulCount > 1:
-            error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] + str(
-                child)
+            error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
+                            + str(child)
             crPrintCyan(error_message)
             logging.exception(__name__)
             raise NotImplementedError(error_message)

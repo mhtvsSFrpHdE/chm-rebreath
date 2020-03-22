@@ -30,8 +30,7 @@ def _my_locale_parser(config_environment):
     # Get
     config_message_path = config_environment['message']['message_config_path']
     # Apply
-    config_message_path = language_current + \
-        config_message_path  # language/en_US/message.xml
+    config_message_path = language_current + config_message_path  # language/en_US/message.xml
 
     # Put it back
     config_environment['message']['config_message_path'] = config_message_path

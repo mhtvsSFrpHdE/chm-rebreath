@@ -32,27 +32,24 @@ def get_catalog_chm_file_path():
     catalog_file_path = None
 
     try:
-        catalog_file_list = plPath(crDevInput.unpackedChmFolder).glob(
-            magic_value_config_local['chm']['catalog_file_search_pattern'])
+        catalog_file_list = plPath(crDevInput.unpackedChmFolder) \
+            .glob(magic_value_config_local['chm']['catalog_file_search_pattern'])
         catalog_file_list_count = 0
 
         for catalog_file in catalog_file_list:
             catalog_file_list_count = catalog_file_list_count + 1
 
             if catalog_file_list_count > 1:
-                crPrintCyan(
-                    message_config_local['err']['multiple_catalog_file'])
+                crPrintCyan(message_config_local['err']['multiple_catalog_file'])
                 logging.exception(__name__)
-                raise EnvironmentError(
-                    message_config_local['err']['multiple_catalog_file'])
+                raise EnvironmentError(message_config_local['err']['multiple_catalog_file'])
 
             catalog_file_path = catalog_file
 
         if catalog_file_list_count is 0:
             crPrintCyan(message_config_local['err']['catalog_file_not_found'])
             logging.exception(__name__)
-            raise EnvironmentError(
-                message_config_local['err']['catalog_file_not_found'])
+            raise EnvironmentError(message_config_local['err']['catalog_file_not_found'])
     except:
         logging.exception(__name__)
         raise
@@ -96,9 +93,7 @@ def get_preprocessed_environment(environment_config):
     mD = environment_config['data']
     mDC = environment_config['data_catalog']
 
-    environment_config['data_catalog']['css_file_path'] = mD['root'] + \
-        mDC['root'] + mDC['css_file_name']
-    environment_config['data_catalog']['js_file_path'] = mD['root'] + \
-        mDC['root'] + mDC['js_file_name']
+    environment_config['data_catalog']['css_file_path'] = mD['root'] + mDC['root'] + mDC['css_file_name']
+    environment_config['data_catalog']['js_file_path'] = mD['root'] + mDC['root'] + mDC['js_file_name']
 
     return environment_config

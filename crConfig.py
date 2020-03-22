@@ -58,8 +58,8 @@ def _load_magic_value_config():
         environment_config['dev']['magic_value_config_path'])
 
     if osPath.exists(magic_value_config_path) is False:
-        error_message = message_config['err']['software_broken'] + \
-            str(magic_value_config_path)
+        error_message = message_config['err']['software_broken'] \
+                        + str(magic_value_config_path)
         crPrintCyan(error_message)
         logging.exception(__name__)
         raise EnvironmentError(error_message)

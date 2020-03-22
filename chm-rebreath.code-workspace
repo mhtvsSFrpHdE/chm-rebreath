@@ -4,7 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"python.formatting.autopep8Args": [
+			"--max-line-length 999"
+		]
+	},
 	"extensions": {
 		"recommendations": [
 			"ms-python.python",
