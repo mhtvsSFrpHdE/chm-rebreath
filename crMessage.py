@@ -44,8 +44,10 @@ def get_preprocessed_message(message_config):
 
         # .ini config doesn't support space at end of the line,
         # they will cap by three double quotes
-        #
+        # '""" """' -> ' '
+
         # &nl& is next line, refer to \n in python CODE
+        # '&nl&' -> '\n'
         return myString.strip('"""').replace("&nl&", "\n")
 
     for group_name in message_config.sections():
