@@ -12,6 +12,11 @@
   .active {
     display: block;
   } /* https://www.w3schools.com/howto/howto_js_treeview.asp */
+/* Code example */
+/* https://www.w3schools.com/howto/howto_js_treeview.asp */
+
+/* Style reference */
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started */
 
 ul.catalog_sub_node_list {
   /* Remove margins from the parent ul */
