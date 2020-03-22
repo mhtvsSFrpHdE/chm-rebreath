@@ -44,7 +44,7 @@ def _process_catalog_node(catalog_node, doc, tag, text):
                 # Url
                 text(catalog_node.catalog_name)
     #
-    # else if catalog_node.have_sub_node == True:
+    # else if catalog_node.have_sub_node:
     else:
         # li with have_sub_node class
         with tag("li", klass="catalog_node have_sub_node"):
