@@ -37,7 +37,7 @@ def _get_html_language():
 def _process_catalog_node(catalog_node, doc, tag, text):
     # A catalog node have two status
     if catalog_node.have_sub_node == False:
-        # Create li with no_sub_node class
+        # li with no_sub_node class
         with tag("li", klass="catalog_node no_sub_node"):
             # Name
             with tag("summary", klass="catalog_node_name"):
@@ -46,7 +46,7 @@ def _process_catalog_node(catalog_node, doc, tag, text):
     #
     # else if catalog_node.have_sub_node == True:
     else:
-        # Create li with have_sub_node class
+        # li with have_sub_node class
         with tag("li", klass="catalog_node have_sub_node"):
             # Name
             with tag("summary", klass="catalog_node_name"):
