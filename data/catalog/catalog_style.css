@@ -1,30 +1,3 @@
- /* https://www.w3schools.com/howto/howto_js_treeview.asp */
- 
- /* Remove default bullets */
- ul, #myUL {
-    list-style-type: none;
-  }
-  
-  /* Remove margins and padding from the parent ul */
-  #myUL {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style the caret/arrow */
-  .caret {
-    cursor: pointer;
-    user-select: none; /* Prevent text selection */
-  }
-  
-  /* Create the caret/arrow with a unicode, and style it */
-  .caret::before {
-    content: "\25B6";
-    color: black;
-    display: inline-block;
-    margin-right: 6px;
-  }
-  
   /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
   .caret-down::before {
     transform: rotate(90deg);
@@ -38,4 +11,33 @@
   /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
   .active {
     display: block;
-  } 
+  } /* https://www.w3schools.com/howto/howto_js_treeview.asp */
+
+ul.catalog_sub_node_list {
+  /* Remove margins from the parent ul */
+  margin-top: 0;
+  /* Remove default symbol */
+  list-style-type: none;
+}
+
+summary.catalog_node_name {
+  /* Url style mouse cursor while hovering */
+  cursor: pointer;
+  /* Reduce summary display width to fit its content */
+  display:inline-block;
+}
+
+/* Create arrow for node that have sub node */
+/* Common style: ▶︎ ▼ ■ */
+li.catalog_node.have_sub_node::before {
+  content: "▶︎";
+  font-size: .6rem;
+  display: inline-block;
+  width: 20px;
+}
+
+/* Restore disc symbol for node that no sub node */
+li.catalog_node.no_sub_node {
+  list-style-type: disc;
+}
+
