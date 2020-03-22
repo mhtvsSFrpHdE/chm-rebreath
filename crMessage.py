@@ -27,6 +27,21 @@ def get_preprocessed_message(message_config):
     # Use namespace to avoid conflict
     # Full name: preprocess_string
     def ps(myString):
+        # I DON'T WANT THESE TRASH UNLESS NECESSARY
+        #
+        # # If you do hope use three double quotes(why?),
+        # # try replace " by &dq&, for example: """ -> &dq&&dq&&dq&
+        # myString.replace("&dq&", '"')
+        #
+        # # To show symbol directly, break each & with &/,
+        # # they will be remove to keep symbol together
+        # # For example: &nl& but don't want a line break -> &/ + &nl + &/ + & -> &/&nl&/&
+        # myString = myString.replace("&/", "")
+        #
+        #
+        #
+        #
+
         # .ini config doesn't support space at end of the line,
         # they will cap by three double quotes
         #
