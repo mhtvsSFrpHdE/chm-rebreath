@@ -35,11 +35,25 @@ def _get_html_language():
 
 
 def _process_catalog_node(catalog_node, doc, tag, text):
-    with tag("li"):
-        with tag("span", klass="caret"):
-            text(catalog_node.catalog_name)
-        if catalog_node.have_sub_node:
-            with tag("ul", klass="nested"):
+    # A catalog node have two status
+    if catalog_node.have_sub_node == False:
+        # Create li with no_sub_node class
+        with tag("li", klass="catalog_node no_sub_node"):
+            # Name
+            with tag("summary", klass="catalog_node_name"):
+                # Url
+                text(catalog_node.catalog_name)
+    #
+    # else if catalog_node.have_sub_node == True:
+    else:
+        # Create li with have_sub_node class
+        with tag("li", klass="catalog_node have_sub_node"):
+            # Name
+            with tag("summary", klass="catalog_node_name"):
+                # Url
+                text(catalog_node.catalog_name)
+            # Create its sub-node
+            with tag("ul", klass="catalog_sub_node_list"):
                 for child in catalog_node.sub_node_list:
                     _process_catalog_node(child, doc, tag, text)
 
