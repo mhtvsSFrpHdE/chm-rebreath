@@ -2,6 +2,8 @@
 
 
 def _get_preprocessed_message_early_implementation_code_backup(message_config):
+    # TODO: Remove this if new loop is stable
+    #
     # Try to make process close together and short the method name
     # Use namespace to avoid conflict
     def ps(myString):
