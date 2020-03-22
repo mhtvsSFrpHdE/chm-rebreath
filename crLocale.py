@@ -3,6 +3,12 @@ import locale
 from os import path as osPath
 from pathlib import Path as plPath
 
+# Shortcut to getdefaultlocale()[0]
+
+
+def get_system_language():
+    return locale.getdefaultlocale()[0]
+
 # Preprocess config
 # the config should not change by code after preprocess
 
@@ -10,7 +16,7 @@ from pathlib import Path as plPath
 def _my_locale_parser(config_environment):
     # Check system language
     language_root = config_environment['language']['root']
-    system_language = locale.getdefaultlocale()[0]
+    system_language = get_system_language()
     language_current = language_root + system_language + '/'  # language/en_US/
 
     current_language_exists = osPath.exists(plPath(language_current))

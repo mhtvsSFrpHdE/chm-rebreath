@@ -3,6 +3,7 @@ from yattag import Doc  # Generate HTML
 
 # My
 from crLogHeader import *
+from crLocaleHeader import *
 
 # Read these code from bottom to top is suggested
 #
@@ -20,6 +21,12 @@ message_config_local = None
 #         with tag("title"):
 #     with tag("body"):
 #         with tag("p"):
+
+# Format system language to HTML language
+
+
+def _get_html_language():
+    return get_system_language().replace('_', '-')
 
 # Convert catalog node to HTML object rescue
 
@@ -45,7 +52,7 @@ def get_catalog_html_text(catalog_node):
 
     doc, tag, text = Doc().tagtext()
     doc.asis("<!DOCTYPE html>")
-    with tag("html"):
+    with tag("html", lang=_get_html_language()):
 
         # Head & Meta
         with tag("head"):
