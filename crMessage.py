@@ -1,13 +1,7 @@
 # Some message entry need to preprocess before use
-#
-# NEEDHELP: use a loop to replace all the symbols
-#
-# Update: too bad, failed to use loop to update the values
-# It seems configparser doesn't support iterate through it and update value
-# Perhaps a stackoverflow can help
 
 
-def get_preprocessed_message(message_config):
+def _get_preprocessed_message_early_implementation_code_backup(message_config):
     # Try to make process close together and short the method name
     # Use namespace to avoid conflict
     def ps(myString):
@@ -24,5 +18,24 @@ def get_preprocessed_message(message_config):
 
     mHtml = message_config['html_catalog']
     message_config['html_catalog']['title'] = ps(mHtml['title'])
+
+    return message_config
+
+
+def get_preprocessed_message(message_config):
+    # Try to make process close together and short the method name
+    # Use namespace to avoid conflict
+    # Full name: preprocess_string
+    def ps(myString):
+        # .ini config doesn't support space at end of the line,
+        # they will cap by three double quotes
+        #
+        # %nl% is next line, refer to \n
+        return myString.strip('"""').replace("%nl%", "\n")
+
+    for group_name in message_config.sections():
+        for key_name in message_config[group_name]:
+            message_config[group_name][key_name] = ps(
+                message_config[group_name][key_name])
 
     return message_config
