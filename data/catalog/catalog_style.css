@@ -1,17 +1,3 @@
-  /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-  .caret-down::before {
-    transform: rotate(90deg);
-  }
-  
-  /* Hide the nested list */
-  .nested {
-    display: none;
-  }
-  
-  /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
-  .active {
-    display: block;
-  } /* https://www.w3schools.com/howto/howto_js_treeview.asp */
 /* Code example */
 /* https://www.w3schools.com/howto/howto_js_treeview.asp */
 
@@ -46,3 +32,17 @@ li.catalog_node.no_sub_node {
   list-style-type: disc;
 }
 
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
