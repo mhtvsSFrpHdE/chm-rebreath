@@ -9,7 +9,8 @@
 		"recommendations": [
 			"ms-python.python",
 			"magicstack.magicpython",
-			"tabnine.tabnine-vscode"
+			"tabnine.tabnine-vscode",
+			"esbenp.prettier-vscode"
 		]
 	}
 }
