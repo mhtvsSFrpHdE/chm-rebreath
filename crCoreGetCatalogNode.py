@@ -23,10 +23,14 @@ class CrChmCatalogNode():
     # The URL can be None but it doesn't mean that it doesn't contain sub-node
     # About this, check the raw HTML unpacked from chm file for details
     def __init__(self, myObject):
+        # Information
         self.catalog_name = None
         self.content_url = None
 
+        # Status
         self.have_sub_node = False
+
+        # Matryoshka & Other relationships
         self.sub_node_list = []
 
         for child in myObject:
