@@ -41,7 +41,7 @@ class CrChmCatalogNode():
             if child['name'] == "Name":
                 self.catalog_name = child['value']
             elif child['name'] == "Local":
-                self.content_url = child['value']
+                self.content_url = environment_config_local['output_pages']['root'] + child['value']
 
 
 # In the future, this variable may use fo store multiple root nodes,
