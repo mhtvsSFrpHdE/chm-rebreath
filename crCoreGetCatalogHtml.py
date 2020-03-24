@@ -29,6 +29,22 @@ message_config_local = None
 def _get_html_language():
     return get_system_language().replace('_', '-')
 
+# Generate content_url a tag
+
+
+def _get_content_url_a_tag(catalog_node, doc, tag, text):
+    # Url can be None, preset default values may required
+    #
+    # If have content url:
+    if catalog_node.have_content_url:
+        with tag("a", href=catalog_node.content_url, target="_blank", klass="catalog_node_url have_url"):
+            text(catalog_node.catalog_name)
+    #
+    # else if no content url:
+    else:
+        # A tag but without url
+        with tag("a", klass="catalog_node_url no_url"):
+            text(catalog_node.catalog_name)
 
 
 # Convert catalog node to HTML object rescue
@@ -42,19 +58,16 @@ def _process_catalog_node(catalog_node, doc, tag, text):
     if catalog_node.have_sub_node == False:
         # li with no_sub_node class
         with tag("li", klass="catalog_node no_sub_node"):
-            # Name
-            with tag("summary", klass="catalog_node_name"):
-                # Url
-                text(catalog_node.catalog_name)
+            # Name & Url
+            _get_content_url_a_tag(catalog_node, doc, tag, text)
     #
     # else if catalog_node.have_sub_node:
     else:
         # li with have_sub_node class
         with tag("li", klass="catalog_node have_sub_node"):
-            # Name
-            with tag("summary", klass="catalog_node_name"):
-                # Url
-                text(catalog_node.catalog_name)
+            # Name & Url
+            _get_content_url_a_tag(catalog_node, doc, tag, text)
+
             # Create its sub-node
             with tag("ul", klass="catalog_sub_node_list"):
                 for child in catalog_node.sub_node_list:
