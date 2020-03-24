@@ -29,9 +29,10 @@ message_config_local = None
 def _get_html_language():
     return get_system_language().replace('_', '-')
 
+
+
 # Convert catalog node to HTML object rescue
-
-
+#
 # This code example comes from
 # https://www.w3schools.com/howto/howto_js_treeview.asp
 
@@ -60,9 +61,7 @@ def _process_catalog_node(catalog_node, doc, tag, text):
                     _process_catalog_node(child, doc, tag, text)
 
 
-# Wrap, convert catalog node object to HTML text
-
-
+# Wrap, fill information into the standard HTML document structure
 def get_catalog_html_text(catalog_node):
     global message_config_local
 
