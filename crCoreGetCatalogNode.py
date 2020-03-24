@@ -29,6 +29,7 @@ class CrChmCatalogNode():
         self.content_url = None
 
         # Status
+        self.have_content_url = False
         self.have_sub_node = False
 
         # Matryoshka & Other relationships
@@ -42,6 +43,7 @@ class CrChmCatalogNode():
                 self.catalog_name = child['value']
             elif child['name'] == "Local":
                 self.content_url = environment_config_local['output_pages']['root'] + child['value']
+                self.have_content_url = True
 
 
 # In the future, this variable may use fo store multiple root nodes,
