@@ -11,6 +11,16 @@ ul.catalog_sub_node_list {
   list-style-type: none;
 }
 
+/* Remove "a" tag default style */
+a.catalog_node_url {
+  color: black;
+  text-decoration: none;
+}
+
+/* While hovering "a" tag with url */
+a.catalog_node_url.have_url:hover {
+  /* Show underline*/
+  text-decoration: underline;
 }
 
 /* Create arrow for node that have sub node */
