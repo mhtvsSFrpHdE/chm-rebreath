@@ -18,6 +18,6 @@ from crOutput import *
 # Some module require config file to initialize,
 # call the init method here
 init_environment(message_config, magic_value_config)
-init_core_get_catalog_node(message_config)
+init_core_get_catalog_node(environment_config, message_config)
 init_core_get_catalog_html(environment_config, message_config)
 init_output(environment_config, message_config)
