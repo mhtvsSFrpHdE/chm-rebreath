@@ -22,6 +22,7 @@ message_config_local = None
 #     with tag("body"):
 #         with tag("p"):
 
+
 # Format system language to HTML language
 
 
@@ -29,6 +30,7 @@ def _get_html_language():
     return get_system_language().replace('_', '-')
 
 # Convert catalog node to HTML object rescue
+
 
 # This code example comes from
 # https://www.w3schools.com/howto/howto_js_treeview.asp
@@ -75,9 +77,11 @@ def get_catalog_html_text(catalog_node):
             with tag("title"):
                 text(catalog_node.catalog_name +
                      message_config_local['html_catalog']['title'])
+            #
             # CSS
             doc.stag("link", rel="stylesheet",
                      href=environment_config_local['data_catalog']['css_file_name'])
+            #
             # JavaScript
             with tag("script", type="text/javascript", src=environment_config_local['data_catalog']['js_file_name']):
                 text("")
@@ -88,6 +92,7 @@ def get_catalog_html_text(catalog_node):
                 _process_catalog_node(catalog_node, doc, tag, text)
 
     return doc.getvalue()
+
 
 # Receive config
 
