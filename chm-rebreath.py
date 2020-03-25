@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup  # HTML parsing
 from crBootstrap import *
 from crLogHeader import *
 
+# All returned path musb be pathlib path
+
 # int main () {
 
 
