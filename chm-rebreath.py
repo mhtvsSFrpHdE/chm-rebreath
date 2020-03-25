@@ -19,8 +19,8 @@ def main():
         catalog_html_output_path = get_catalog_html_output_path(catalog_node.catalog_name)
         with open(catalog_html_output_path, "w+", encoding="utf-8") as catalog_html_file:
             catalog_html_file.write(catalog_html_text)
-            copy_catalog_html_resource(output_folder_path)
 
+        copy_catalog_html_resource(output_folder_path)
 
 #}
 main()
