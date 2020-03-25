@@ -13,7 +13,8 @@ ul.catalog_sub_node_list {
 
 /* Remove "a" tag default style */
 a.catalog_node_url {
-  color: black;
+  /* Reset text color to default instead of hyperlink */
+  color: initial;
   text-decoration: none;
 }
 
