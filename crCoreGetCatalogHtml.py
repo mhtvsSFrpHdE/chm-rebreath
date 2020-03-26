@@ -100,7 +100,9 @@ def get_catalog_html_text(catalog_node):
 
         # Body & onLoad method
         with tag("body", onLoad="catalogOnLoad()"):
+            # Catalog scope
             with tag("div", klass="catalog"):
+                # Root unordered list
                 with tag("ul", klass="catalog_root_ul"):
                     _process_catalog_node(catalog_node, doc, tag, text)
 
