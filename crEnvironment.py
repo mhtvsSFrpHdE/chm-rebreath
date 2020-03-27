@@ -54,7 +54,7 @@ def get_catalog_chm_file_full_path():
             .glob(magic_value_config_local['chm']['catalog_file_search_pattern'])
         catalog_file_list_count = 0
 
-        for catalog_file in catalog_file_list:
+        for catalog_file_glob_result in catalog_file_list:
             catalog_file_list_count = catalog_file_list_count + 1
 
             if catalog_file_list_count > 1:
