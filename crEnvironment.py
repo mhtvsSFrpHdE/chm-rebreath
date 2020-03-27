@@ -5,6 +5,7 @@ from pathlib import Path as plPath  # Path
 from os import path as osPath
 
 # My
+from crException import *
 from crLogHeader import *
 import crDevInput  # Information used while development
 
@@ -34,8 +35,7 @@ def confirm_folder_exist(myFolder):
         except:
             error_message = message_config_local['err']['failed_to_create_output_folder']
             crPrintCyan(error_message)
-            logging.exception(__name__)
-            raise EnvironmentError(error_message)
+            raise CrEnvironmentError(error_message)
     # else if myFolder already exist
     else:
         folder_exist = True
@@ -59,17 +59,16 @@ def get_catalog_chm_file_path():
 
             if catalog_file_list_count > 1:
                 crPrintCyan(message_config_local['err']['multiple_catalog_file'])
-                logging.exception(__name__)
-                raise EnvironmentError(message_config_local['err']['multiple_catalog_file'])
+                raise CrEnvironmentError(message_config_local['err']['multiple_catalog_file'])
 
             catalog_file_path = catalog_file
 
         if catalog_file_list_count is 0:
-            crPrintCyan(message_config_local['err']['catalog_file_not_found'])
-            logging.exception(__name__)
-            raise EnvironmentError(message_config_local['err']['catalog_file_not_found'])
+            # Nothing found, raise error
+            error_message = message_config_local['err']['catalog_file_not_found']
+            crPrintCyan(error_message)
+            raise CrFileNotFoundError(error_message)
     except:
-        logging.exception(__name__)
         raise
 
     return catalog_file_path

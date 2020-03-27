@@ -1,4 +1,5 @@
 # My
+from crException import *
 from crLogHeader import *
 
 # Receive a BeautifulSoup soup object,
@@ -102,8 +103,7 @@ def _process_catalog_li(myLi):
         error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
             + str(sub_node_list)
         crPrintCyan(error_message)
-        logging.exception(__name__)
-        raise NotImplementedError(error_message)
+        raise CrNotImplementedError(error_message)
     # Update sub-node status,
     # to make sure there is only one sub-node ul in the current version
     elif sub_node_list_length == 1:
@@ -154,8 +154,7 @@ def _process_my_soup(mySoup):
             error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
                 + str(child)
             crPrintCyan(error_message)
-            logging.exception(__name__)
-            raise NotImplementedError(error_message)
+            raise CrNotImplementedError(error_message)
         else:
             # Process ul tag found
             catalog_node = _process_catalog_ul(child)
@@ -171,7 +170,6 @@ def get_catalog_node(mySoup):
     try:
         catalog_node = _process_my_soup(mySoup)
     except:
-        logging.exception(__name__)
         raise
     return catalog_node
 
