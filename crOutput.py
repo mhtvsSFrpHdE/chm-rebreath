@@ -2,6 +2,7 @@ from pathlib import Path as plPath
 from shutil import copyfile
 
 from crLogHeader import *
+from crEnvironmentHeader import confirm_folder_exist
 
 environment_config_local = None
 message_config_local = None

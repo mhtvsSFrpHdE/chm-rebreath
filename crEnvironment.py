@@ -22,6 +22,24 @@ def init_environment(message_config, magic_value_config):
     magic_value_config_local = magic_value_config
     message_config_local = message_config
 
+# Create folder if not exist
+
+
+def confirm_folder_exist(myFolder):
+    folder_exist = False
+    if osPath.exists(myFolder) is False:
+        try:
+            os.mkdir(myFolder)
+            folder_exist = True
+        except:
+            error_message = message_config_local['err']['failed_to_create_output_folder']
+            crPrintCyan(error_message)
+            logging.exception(__name__)
+            raise EnvironmentError(error_message)
+    # else if myFolder already exist
+    else:
+        folder_exist = True
+
 # Scan and get catalog file path
 
 
