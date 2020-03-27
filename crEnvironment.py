@@ -109,9 +109,9 @@ def get_catalog_html_output_path(catalog_html_title):
 
 def get_preprocessed_environment(environment_config):
     mD = environment_config['data']
-    mDC = environment_config['data_catalog']
+    mDC = environment_config['data_catalog_html_resource']
 
-    environment_config['data_catalog']['css_file_full_path'] = mD['root'] + mDC['root'] + mDC['css_file_name']
-    environment_config['data_catalog']['js_file_full_path'] = mD['root'] + mDC['root'] + mDC['js_file_name']
+    environment_config['data_catalog_html_resource']['css_file_full_path'] = mD['root_path'] + mDC['root_path'] + mDC['css_file_name']
+    environment_config['data_catalog_html_resource']['js_file_full_path'] = mD['root_path'] + mDC['root_path'] + mDC['js_file_name']
 
     return environment_config
