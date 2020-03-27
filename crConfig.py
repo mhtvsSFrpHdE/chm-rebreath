@@ -47,7 +47,7 @@ def _load_message_config():
         logging.exception(__name__)
         raise EnvironmentError(error_message)
 
-    message_config.read(message_config_path)
+    message_config.read(message_config_path, encoding='utf-8')
 
 
 def _load_magic_value_config():
