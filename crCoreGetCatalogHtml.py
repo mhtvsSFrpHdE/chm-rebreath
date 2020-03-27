@@ -92,10 +92,10 @@ def get_catalog_html_text(catalog_node):
             #
             # CSS
             doc.stag("link", rel="stylesheet",
-                     href=environment_config_local['data_catalog']['css_file_name'])
+                     href=environment_config_local['data_catalog_html']['css_file_name'])
             #
             # JavaScript
-            with tag("script", src=environment_config_local['data_catalog']['js_file_name']):
+            with tag("script", src=environment_config_local['data_catalog_html']['js_file_name']):
                 text("")
 
         # Body & onLoad method
