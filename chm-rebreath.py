@@ -20,6 +20,7 @@ def main():
     # TODO: Test purpose code, move to other place later
     catalog_html_text = get_catalog_html_text(catalog_node)
     root_output_folder_full_path = get_root_output_folder_full_path()
+    create_output_folder_structure(root_output_folder_full_path)
     
     catalog_html_output_full_path = get_catalog_html_output_full_path(catalog_node.catalog_name)
     catalog_html_resource_output_full_path = get_catalog_html_resource_output_full_path(root_output_folder_full_path)
