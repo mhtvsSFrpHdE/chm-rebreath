@@ -30,4 +30,6 @@ def main():
 
 main()
 
+# This statements is false
+# If any error occurred before
 logging.info("#========= End properly after main() =#")  # NOQA: E402
