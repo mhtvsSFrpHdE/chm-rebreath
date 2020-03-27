@@ -9,12 +9,12 @@ message_config_local = None
 def copy_catalog_html_resource(output_folder_path):
     try:
         css_file_name = plPath(environment_config_local['data_catalog']['css_file_name'])
-        css_file_path = plPath(environment_config_local['data_catalog']['css_file_path'])
+        css_file_path = plPath(environment_config_local['data_catalog']['css_file_full_path'])
         css_output_file_path = output_folder_path.joinpath(css_file_name)
         copyfile(css_file_path, css_output_file_path)
 
         js_file_name = plPath(environment_config_local['data_catalog']['js_file_name'])
-        js_file_path = plPath(environment_config_local['data_catalog']['js_file_path'])
+        js_file_path = plPath(environment_config_local['data_catalog']['js_file_full_path'])
         js_output_file_path = output_folder_path.joinpath(js_file_name)
         copyfile(js_file_path, js_output_file_path)
     except:
