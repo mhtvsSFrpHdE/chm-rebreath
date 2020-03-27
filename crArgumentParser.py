@@ -31,5 +31,3 @@ def _confirm_argument_behavior():
 def init_argument_parser():
     _python_arg_parser()
     _confirm_argument_behavior()
-    print(commandline_arguments.inputFolder)
-    exit(0)
