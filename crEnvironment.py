@@ -61,7 +61,7 @@ def get_catalog_chm_file_full_path():
                 crPrintCyan(message_config_local['err']['multiple_catalog_file'])
                 raise CrNotImplementedError(message_config_local['err']['multiple_catalog_file'])
 
-            catalog_file_path = catalog_file
+            catalog_file_full_path = plPath(catalog_file_glob_result)
 
         if catalog_file_list_count is 0:
             # Nothing found, raise error
