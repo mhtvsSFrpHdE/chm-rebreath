@@ -20,12 +20,14 @@ def main():
     # TODO: Test purpose code, move to other place later
     catalog_html_text = get_catalog_html_text(catalog_node)
     root_output_folder_full_path = get_root_output_folder_full_path()
+    
+    catalog_html_output_full_path = get_catalog_html_output_full_path(catalog_node.catalog_name)
     catalog_html_resource_output_full_path = get_catalog_html_resource_output_full_path(root_output_folder_full_path)
 
-        with open(catalog_html_output_path, "w+", encoding="utf-8") as catalog_html_file:
-            catalog_html_file.write(catalog_html_text)
+    with open(catalog_html_output_full_path, "w+", encoding="utf-8") as catalog_html_file:
+        catalog_html_file.write(catalog_html_text)
 
-        copy_catalog_html_resource(output_folder_path)
+    copy_catalog_html_resource(catalog_html_resource_output_full_path)
 
 
 # }
