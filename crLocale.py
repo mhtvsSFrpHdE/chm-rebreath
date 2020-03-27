@@ -19,8 +19,8 @@ def _my_locale_parser(config_environment):
     system_language = get_system_language()
     current_language = language_root + system_language + '/'  # language/en_US/
 
-    if current_language_exists is True:
     current_language_exists = osPath.exists(plPath(current_language))
+    if current_language_exists is False:
         current_language = config_environment['language']['fallback_path']
     #
 
