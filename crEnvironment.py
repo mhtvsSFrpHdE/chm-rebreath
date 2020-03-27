@@ -43,11 +43,11 @@ def confirm_folder_exist(myFolder):
 # Search and get catalog file path
 
 
-def get_catalog_chm_file_path():
+def get_catalog_chm_file_full_path():
     global magic_value_config_local
     global message_config_local
 
-    catalog_file_path = None
+    catalog_file_full_path = None
 
     try:
         catalog_file_list = plPath(crDevInput.unpackedChmFolder) \
@@ -71,7 +71,7 @@ def get_catalog_chm_file_path():
     except:
         raise
 
-    return catalog_file_path
+    return catalog_file_full_path
 
 
 def get_root_output_folder_full_path():
