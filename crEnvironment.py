@@ -77,7 +77,7 @@ def get_catalog_chm_file_path():
 # Wrap the output folder with pathlib
 
 
-def get_root_output_folder_path():
+def get_root_output_folder_full_path():
     output_folder = plPath(crDevInput.outputFolder)
 
     confirm_folder_exist(output_folder)
@@ -87,8 +87,8 @@ def get_root_output_folder_path():
 # Combine serval information to catalog HTML full output path
 
 
-def get_catalog_html_output_path(catalog_html_title):
-    output_folder_path = get_root_output_folder_path()
+def get_catalog_html_output_full_path(catalog_html_title):
+    output_folder_path = get_root_output_folder_full_path()
     #
     # Catalog root node name  + `- Catalog` + `.html`
     output_file_path = output_folder_path.joinpath(
