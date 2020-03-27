@@ -59,7 +59,7 @@ def get_catalog_chm_file_full_path():
 
             if catalog_file_list_count > 1:
                 crPrintCyan(message_config_local['err']['multiple_catalog_file'])
-                raise CrEnvironmentError(message_config_local['err']['multiple_catalog_file'])
+                raise CrNotImplementedError(message_config_local['err']['multiple_catalog_file'])
 
             catalog_file_path = catalog_file
 
