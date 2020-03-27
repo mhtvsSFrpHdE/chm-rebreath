@@ -8,6 +8,10 @@ environment_config_local = None
 message_config_local = None
 
 
+def create_output_folder_structure(root_output_folder):
+    confirm_folder_exist(get_catalog_html_resource_output_full_path(root_output_folder))
+
+
 def get_catalog_html_resource_output_full_path(root_output_folder):
     output_catalog_html_root_path = plPath(environment_config_local['output_catalog_html_resource']['root_path'])
     output_catalog_html_root_full_path = root_output_folder.joinpath(output_catalog_html_root_path)
@@ -17,9 +21,6 @@ def get_catalog_html_resource_output_full_path(root_output_folder):
 
 def copy_catalog_html_resource(output_folder_path):
     try:
-        # TODO: Create all folder together in one method
-        confirm_folder_exist(output_folder_path)
-
         css_output_file_name = plPath(environment_config_local['output_catalog_html_resource']['css_file_name'])
         css_data_file_path = plPath(environment_config_local['data_catalog_html_resource']['css_file_full_path'])
         css_output_file_path = output_folder_path.joinpath(css_output_file_name)
