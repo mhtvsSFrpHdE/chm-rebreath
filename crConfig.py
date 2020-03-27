@@ -58,7 +58,7 @@ def _load_magic_value_config():
 
     if osPath.exists(magic_value_config_path) is False:
         error_message = message_config['err']['software_broken'] \
-                        + str(magic_value_config_path)
+            + str(magic_value_config_path)
         crPrintCyan(error_message)
         raise CrFileNotFoundError(error_message)
 
