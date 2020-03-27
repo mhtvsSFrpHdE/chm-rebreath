@@ -15,7 +15,7 @@ def get_system_language():
 
 def _my_locale_parser(config_environment):
     # Check system language
-    language_root = config_environment['language']['root']
+    language_root = config_environment['language']['root_path']
     system_language = get_system_language()
     language_current = language_root + system_language + '/'  # language/en_US/
 
