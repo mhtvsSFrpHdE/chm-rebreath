@@ -1,19 +1,19 @@
-# 3rd
-import logging  # NOQA: E402
-
 # Prepare everything about environment, logging, config, international
 # Result in one line `from crBootstrap import *` in the main method or file
-#
+
+
 # Prepare logging at the very beginning
 # We do not dealing with external error, just print and crash
+import logging  # NOQA: E402
+
 logging.basicConfig(filename="log.txt", level=logging.INFO)  # NOQA: E402
 logging.info("#========= Start =========#")  # NOQA: E402
 
-# My
-from crConfigHeader import *
-from crEnvironmentHeader import *
-from crCoreHeader import *
-from crOutputHeader import *
+# Other modules
+from crConfigHeader import *  # NOQA: E402
+from crEnvironmentHeader import *  # NOQA: E402
+from crCoreHeader import *  # NOQA: E402
+from crOutputHeader import *  # NOQA: E402
 
 # Some module require config file to initialize,
 # call the init method here
