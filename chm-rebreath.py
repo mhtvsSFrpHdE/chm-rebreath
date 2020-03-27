@@ -11,9 +11,11 @@ from crLogHeader import *
 
 
 def main():
+    # Catalog node placeholder
     catalog_node = None
 
     with open(get_catalog_chm_file_path(), "rb") as chm_catalog_file:
+    # Open 
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
         catalog_node = get_catalog_node(mySoup)
 
