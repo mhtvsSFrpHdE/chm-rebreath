@@ -9,6 +9,12 @@ import logging  # NOQA: E402
 logging.basicConfig(filename="log.txt", level=logging.INFO)  # NOQA: E402
 logging.info("#========= Start =========#")  # NOQA: E402
 
+# Prepare command line arguments at the very beginning
+from crArgumentParserHeader import *
+
+init_argument_parser()
+
+
 # Other modules
 from crConfigHeader import *  # NOQA: E402
 from crEnvironmentHeader import *  # NOQA: E402
