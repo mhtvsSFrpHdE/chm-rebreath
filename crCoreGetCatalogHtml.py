@@ -89,11 +89,12 @@ def get_catalog_html_text(catalog_node):
             with tag("title"):
                 text(catalog_node.catalog_name +
                      message_config_local['html_catalog']['title'])
-            #
+
             # CSS
             doc.stag("link", rel="stylesheet",
                      href=environment_config_local['data_catalog_html']['css_file_name'])
             #
+
             # JavaScript
             with tag("script", src=environment_config_local['data_catalog_html']['js_file_name']):
                 text("")
