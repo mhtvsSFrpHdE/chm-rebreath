@@ -79,14 +79,8 @@ def get_catalog_chm_file_path():
 
 def get_root_output_folder_path():
     output_folder = plPath(crDevInput.outputFolder)
-    if osPath.exists(output_folder) is False:
-        try:
-            os.mkdir(output_folder)
-        except:
-            error_message = message_config_local['err']['failed_to_create_output_folder']
-            crPrintCyan(error_message)
-            logging.exception(__name__)
-            raise EnvironmentError(error_message)
+
+    confirm_folder_exist(output_folder)
 
     return output_folder
 
