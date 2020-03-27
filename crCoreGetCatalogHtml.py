@@ -47,7 +47,7 @@ def _get_content_url_a_tag(catalog_node, doc, tag, text):
             text(catalog_node.catalog_name)
 
 
-# Convert catalog node to HTML object rescue
+# Convert catalog node to HTML object recurse
 #
 # This code example comes from
 # https://www.w3schools.com/howto/howto_js_treeview.asp
@@ -74,7 +74,7 @@ def _process_catalog_node(catalog_node, doc, tag, text):
                     _process_catalog_node(child, doc, tag, text)
 
 
-# Wrap, fill information into the standard HTML document structure
+# Fill information into the standard HTML document structure
 def get_catalog_html_text(catalog_node):
     global message_config_local
 

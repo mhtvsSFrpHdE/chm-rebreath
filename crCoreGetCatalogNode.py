@@ -3,7 +3,7 @@ from crException import *
 from crLogHeader import *
 
 # Receive a BeautifulSoup soup object,
-# then try to parse it to a rescue catalog node
+# then try to parse it to a recurse catalog node
 #
 # Read these code from bottom to top is suggested
 #
@@ -47,30 +47,54 @@ class CrChmCatalogNode():
                 self.have_content_url = True
 
 
-# In the future, this variable may use fo store multiple root nodes,
+# TODO: In the future, this variable may use fo store multiple root nodes,
 # or implemented by another solution, just a hint.
 catalog_node_list = []
 
-# Scan li tag that contains node, find object tag or other ul tags
-# "OBJECT" refer to a catalog node that doesn't have sub-node
-# "ul" refer to a catalog, but with sub-node exists
-#
-# Also detect sub-node node at here
+# Process a catalog's sub node
+
+
+def _process_catalog_sub_node(catalog_node, sub_node_list):
+    # Copy sub-node status to the class instance
+    catalog_node.have_sub_node = True
+
+    # Scan sub-node_list to find li
+    # The li refers to this sub-node would also have it's sub-node,
+    # in this case, require an iteration to complete
+    for child in sub_node_list[0]:
+        if child.name == "li":
+            catalog_node.sub_node_list.append(_process_catalog_li(child))
+
+    return catalog_node
+
+# Raise error about multiple sub node ul
+
+
+def _raise_catalog_multiple_sub_node_ul(sub_node_list):
+    error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
+        + str(sub_node_list)
+
+    crPrintCyan(error_message)
+
+    raise CrNotImplementedError(error_message)
+
+
+# Recurse scan li tag that contains catalog node, find object tag or other ul tags
+# "OBJECT" refer to a catalog node that may have sub-node or not
+# "ul" refer to a catalog's sub-node
 
 
 def _process_catalog_li(myLi):
+    #Placeholder
     catalog_node = None
-    # Although CrChmCatalogNode has sub-node boolean,
-    # but in an iterator it not always initialize for use at the very beginning
-    # So here to use a separate boolean to store the status
-    have_sub_node = False
+    
     # Call it a list, but for now,
     # the sub-node list supports exactly one sub-node(ul object)
     # Array here allow it possible to hold more than one value once detected,
     # so later can raise an error about it
     sub_node_list = []
 
-    # Scan sub-nodes
+    # Scan tags in li
     for child in myLi:
         # When child.name == "li",
         # enter a new iteration until a object and it's ul found
@@ -97,28 +121,17 @@ def _process_catalog_li(myLi):
         elif child.name == "ul":
             sub_node_list.append(child)
 
+    # After scan, check results
+    #
     # Calculate sub-node list length and raise an error if necessary
     sub_node_list_length = len(sub_node_list)
+    #
     if sub_node_list_length > 1:
-        error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
-            + str(sub_node_list)
-        crPrintCyan(error_message)
-        raise CrNotImplementedError(error_message)
-    # Update sub-node status,
-    # to make sure there is only one sub-node ul in the current version
+        _raise_catalog_multiple_sub_node_ul(sub_node_list)
+
+    # No error and everything is fine, check and process sub-node
     elif sub_node_list_length == 1:
-        have_sub_node = True
-
-    if have_sub_node:
-        # Copy sub-node status to the class instance
-        catalog_node.have_sub_node = True
-
-        # Scan sub-node_list to find li
-        # The li refers to this sub-node would also have it's sub-node,
-        # in this case, require an iteration to complete
-        for child in sub_node_list[0]:
-            if child.name == "li":
-                catalog_node.sub_node_list.append(_process_catalog_li(child))
+        catalog_node = _process_catalog_sub_node(catalog_node, sub_node_list)
 
     return catalog_node
 
@@ -161,7 +174,7 @@ def _process_my_soup(mySoup):
 
     return catalog_node
 
-# Wrap
+# get_catalog_node
 
 
 def get_catalog_node(mySoup):

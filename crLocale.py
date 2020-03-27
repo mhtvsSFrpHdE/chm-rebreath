@@ -7,6 +7,7 @@ from pathlib import Path as plPath
 
 
 def get_system_language():
+
     return locale.getdefaultlocale()[0]
 
 # Preprocess config
@@ -14,22 +15,19 @@ def get_system_language():
 
 
 def _my_locale_parser(config_environment):
-    # Check system language
+    # Get current system language
     language_root = config_environment['language']['root_path']
     system_language = get_system_language()
     current_language = language_root + system_language + '/'  # language/en_US/
 
+    # Confirm the language files are exists.
+    # If not, use default fallback language
     current_language_exists = osPath.exists(plPath(current_language))
     if current_language_exists is False:
         current_language = config_environment['language']['fallback_path']
-    #
 
     # Apply language to path
-    #
-    # config_message_path
-    # Get
     config_message_path = config_environment['message']['message_config_path']
-    # Apply
     config_message_path = current_language + config_message_path  # language/en_US/message.xml
 
     # Put it back
@@ -37,7 +35,7 @@ def _my_locale_parser(config_environment):
 
     return config_environment
 
-# Wrap
+# get_environment_locale
 
 
 def get_environment_locale(config_environment):

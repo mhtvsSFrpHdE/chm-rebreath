@@ -65,7 +65,7 @@ def _load_magic_value_config():
     magic_value_config.read(magic_value_config_path)
 
 
-# Wrap
+# init_config
 
 
 def init_config():

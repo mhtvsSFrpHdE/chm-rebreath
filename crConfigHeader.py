@@ -3,6 +3,7 @@
 #
 # The entire process is wrapped good,
 # so the other modules don't need to worry about how to deal with it
+
 from crConfig import environment_config
 from crConfig import magic_value_config
 from crConfig import message_config

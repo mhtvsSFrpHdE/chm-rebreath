@@ -40,7 +40,7 @@ def crCreateFolder(myFolder):
     else:
         folder_exist = True
 
-# Search and get catalog file path
+# Search in input folder and get catalog file path
 
 
 def get_catalog_chm_file_full_path():
@@ -83,6 +83,8 @@ def get_catalog_chm_file_full_path():
 
     return catalog_file_full_path
 
+# get_root_output_folder_full_path
+
 
 def get_root_output_folder_full_path():
     output_folder = plPath(crDevInput.outputFolder)
@@ -106,7 +108,7 @@ def get_catalog_html_output_full_path(catalog_html_title):
 
     return output_file_path
 
-# Some entry need to preprocess before use
+# get_preprocessed_environment
 
 
 def get_preprocessed_environment(environment_config):
