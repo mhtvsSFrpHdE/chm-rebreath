@@ -40,7 +40,7 @@ def confirm_folder_exist(myFolder):
     else:
         folder_exist = True
 
-# Scan and get catalog file path
+# Search and get catalog file path
 
 
 def get_catalog_chm_file_path():
@@ -73,8 +73,6 @@ def get_catalog_chm_file_path():
 
     return catalog_file_path
 
-# Wrap the output folder with pathlib
-
 
 def get_root_output_folder_full_path():
     output_folder = plPath(crDevInput.outputFolder)
@@ -84,7 +82,7 @@ def get_root_output_folder_full_path():
     return output_folder
 
 
-# Combine serval information to catalog HTML full output path
+# Combine serval information to generate catalog HTML full output path
 
 
 def get_catalog_html_output_full_path(catalog_html_title):
