@@ -13,7 +13,7 @@ logging.info("#========= Start =========#")  # NOQA: E402
 from crConfigHeader import *
 from crEnvironmentHeader import *
 from crCoreHeader import *
-from crOutput import *
+from crOutputHeader import *
 
 # Some module require config file to initialize,
 # call the init method here
