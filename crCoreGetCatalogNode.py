@@ -67,6 +67,16 @@ def _process_catalog_sub_node(catalog_node, sub_node_list):
 
     return catalog_node
 
+# Raise error about catalog object tag not found
+
+
+def _raise_catalog_object_tag_not_fount():
+    error_message = message_config_local['err']['catalog_object_tag_not_fount']
+
+    crPrintCyan(error_message)
+
+    raise CrObjectTagNotFoundInCatalogChmError(error_message)
+
 # Raise error about multiple sub node ul
 
 
@@ -122,6 +132,10 @@ def _process_catalog_li(myLi):
             sub_node_list.append(child)
 
     # After scan, check results
+    #
+    # Confirm that object tag is found
+    if catalog_node is None:
+        _raise_catalog_object_tag_not_fount()
     #
     # Calculate sub-node list length and raise an error if necessary
     sub_node_list_length = len(sub_node_list)
