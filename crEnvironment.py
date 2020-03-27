@@ -26,7 +26,7 @@ def init_environment(message_config, magic_value_config):
 # Create folder if not exist
 
 
-def confirm_folder_exist(myFolder):
+def crCreateFolder(myFolder):
     folder_exist = False
     if osPath.exists(myFolder) is False:
         try:
@@ -77,7 +77,7 @@ def get_catalog_chm_file_full_path():
 def get_root_output_folder_full_path():
     output_folder = plPath(crDevInput.outputFolder)
 
-    confirm_folder_exist(output_folder)
+    crCreateFolder(output_folder)
 
     return output_folder
 

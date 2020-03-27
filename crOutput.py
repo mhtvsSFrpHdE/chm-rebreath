@@ -3,14 +3,14 @@ from shutil import copyfile
 
 from crException import *
 from crLogHeader import *
-from crEnvironmentHeader import confirm_folder_exist
+from crEnvironmentHeader import crCreateFolder
 
 environment_config_local = None
 message_config_local = None
 
 
 def create_output_folder_structure(root_output_folder):
-    confirm_folder_exist(get_catalog_html_resource_output_full_path(root_output_folder))
+    crCreateFolder(get_catalog_html_resource_output_full_path(root_output_folder))
 
 
 def get_catalog_html_resource_output_full_path(root_output_folder):
