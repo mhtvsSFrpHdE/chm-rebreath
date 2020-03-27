@@ -9,6 +9,9 @@ message_config_local = None
 
 def copy_catalog_html_resource(output_folder_path):
     try:
+        # TODO: Create all folder together in one method
+        confirm_folder_exist(output_folder_path)
+        
         css_output_file_name = plPath(environment_config_local['output_catalog_html_resource']['css_file_name'])
         css_data_file_path = plPath(environment_config_local['data_catalog_html_resource']['css_file_full_path'])
         css_output_file_path = output_folder_path.joinpath(css_output_file_name)
