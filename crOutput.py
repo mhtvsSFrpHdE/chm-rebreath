@@ -7,6 +7,14 @@ from crEnvironmentHeader import confirm_folder_exist
 environment_config_local = None
 message_config_local = None
 
+
+def get_catalog_html_resource_output_full_path(root_output_folder):
+    output_catalog_html_root_path = plPath(environment_config_local['output_catalog_html_resource']['root_path'])
+    output_catalog_html_root_full_path = root_output_folder.joinpath(output_catalog_html_root_path)
+
+    return output_catalog_html_root_full_path
+
+
 def copy_catalog_html_resource(output_folder_path):
     try:
         # TODO: Create all folder together in one method
