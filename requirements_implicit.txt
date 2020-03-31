@@ -1,0 +1,7 @@
+# Implicit dependencies
+
+# BeautifulSoup HTML parser
+html5lib
+
+# BeautifulSoup UnicodeDammit enhance accurate to detect unknown file encoding
+chardet
