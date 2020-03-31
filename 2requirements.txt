@@ -1,4 +1,0 @@
-# pigar doesn't recognize implicit dependencies,
-# for example html5lib used in beautifulsoup4
-
-html5lib
