@@ -98,8 +98,8 @@ def get_catalog_html_text(catalog_node):
             doc.stag("link", rel="stylesheet", href=catalog_style_path)
 
             # JavaScript
-            with tag("script", src=catalog_script_path):
-                text("")
+            with tag("script", "defer", src=catalog_script_path):
+                pass
 
         # Body & onLoad method
         with tag("body", onLoad="catalogOnLoad()"):
