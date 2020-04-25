@@ -37,6 +37,23 @@ function toggleCatalogNodeListExpandStatus(catalogNodeList) {
   }
 }
 
+/** When click on every catalog node title text
+ * If it's parent element can tell it have sub node
+ * locate the sub node list and toggle its expand status
+ * 
+ * @param {*} event Element which fired event
+ */
+function onclickCatalogNode(event) {
+  // Check if this one have sub node
+  let haveSubNode = event.parentElement.classList.contains("have_sub_node");
+  // If not, stop execute
+  if (haveSubNode === false) return;
+
+  let catalogNodeList = event.nextElementSibling;
+
+  toggleCatalogNodeListExpandStatus(catalogNodeList);
+}
+
 /** Initialize catalog div */
 function initCatalogDiv() {
   // Find and expand root level catalog node list
