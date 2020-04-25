@@ -32,7 +32,7 @@ def _get_html_language():
 # Generate content_url a tag
 
 
-def _get_content_url_a_tag(catalog_node, doc, tag, text):
+def _get_content_url_tag(catalog_node, doc, tag, text):
     # Url can be None, preset default values may required
     #
     # If have content url:
@@ -59,14 +59,14 @@ def _process_catalog_node(catalog_node, doc, tag, text):
         # li with no_sub_node class
         with tag("li", klass="catalog_node no_sub_node"):
             # Name & Url
-            _get_content_url_a_tag(catalog_node, doc, tag, text)
+            _get_content_url_tag(catalog_node, doc, tag, text)
     #
     # else if catalog_node.have_sub_node:
     else:
         # li with have_sub_node class
         with tag("li", klass="catalog_node have_sub_node"):
             # Name & Url
-            _get_content_url_a_tag(catalog_node, doc, tag, text)
+            _get_content_url_tag(catalog_node, doc, tag, text)
 
             # Create its sub-node
             with tag("ul", klass="catalog_sub_node_list"):
