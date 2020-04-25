@@ -11,15 +11,8 @@
   list-style-type: none;
 }
 
-/* Remove "a" tag default style */
-a.catalog_node_url {
-  /* Reset text color to default instead of hyperlink */
-  color: initial;
-  text-decoration: none;
-}
-
-/* While hovering "a" tag with url */
   /* Show underline*/
+/* While hovering catalog node with url */
 .catalog_node_url.have_url:hover {
   text-decoration: underline;
 }
