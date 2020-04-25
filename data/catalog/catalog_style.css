@@ -33,17 +33,17 @@
   list-style-type: disc;
 }
 
-/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-.caret-down::before {
+/* Rotate the arrow symbol when clicked on catalog node (using JavaScript) */
+.catalog_node.expanded::before {
   transform: rotate(90deg);
 }
 
-/* Hide the nested list */
-.nested {
+/* Fold (hide) all catalog sub node list by default */
+.catalog_node.have_sub_node > .catalog_node_list.folded {
   display: none;
 }
 
-/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
-.active {
+/* Expand (show) catalog sub node list when click (with JavaScript) */
+.catalog_node_list.expanded {
   display: block;
 }
