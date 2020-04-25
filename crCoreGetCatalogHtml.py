@@ -69,7 +69,7 @@ def _process_catalog_node(catalog_node, doc, tag, text):
             _get_content_url_tag(catalog_node, doc, tag, text)
 
             # Create its sub-node
-            with tag("ul", klass="catalog_sub_node_list"):
+            with tag("ul", klass="catalog_node_list sub folded"):
                 for child in catalog_node.sub_node_list:
                     _process_catalog_node(child, doc, tag, text)
 
@@ -106,7 +106,7 @@ def get_catalog_html_text(catalog_node):
             # Catalog scope
             with tag("div", klass="catalog"):
                 # Root unordered list
-                with tag("ul", klass="catalog_root_ul"):
+                with tag("ul", klass="catalog_node_list root"):
                     _process_catalog_node(catalog_node, doc, tag, text)
 
     return doc.getvalue()
