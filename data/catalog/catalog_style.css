@@ -4,7 +4,7 @@
 /* Style reference */
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started */
 
-ul.catalog_sub_node_list {
+.catalog_node_list {
   /* Remove margins from the parent ul */
   margin-top: 0;
   /* Remove default symbol */
@@ -19,14 +19,14 @@ a.catalog_node_url {
 }
 
 /* While hovering "a" tag with url */
-a.catalog_node_url.have_url:hover {
   /* Show underline*/
+.catalog_node_url.have_url:hover {
   text-decoration: underline;
 }
 
 /* Create arrow for node that have sub node */
 /* Common style: ▶︎ ▼ ■ */
-li.catalog_node.have_sub_node::before {
+.catalog_node.have_sub_node::before {
   content: "▶︎";
   font-size: 0.6rem;
   display: inline-block;
@@ -34,7 +34,7 @@ li.catalog_node.have_sub_node::before {
 }
 
 /* Restore disc symbol for node that no sub node */
-li.catalog_node.no_sub_node {
+.catalog_node.no_sub_node {
   list-style-type: disc;
 }
 
