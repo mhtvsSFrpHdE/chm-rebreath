@@ -102,7 +102,7 @@ def get_catalog_html_text(catalog_node):
                 pass
 
         # Body & onLoad method
-        with tag("body", onLoad="catalogOnLoad()"):
+        with tag("body", onload="onloadHtmlBody()"):
             # Catalog scope
             with tag("div", klass="catalog"):
                 # Root unordered list
