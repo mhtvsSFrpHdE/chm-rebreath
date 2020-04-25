@@ -37,13 +37,13 @@ def _get_content_url_tag(catalog_node, doc, tag, text):
     #
     # If have content url:
     if catalog_node.have_content_url:
-        with tag("a", href=catalog_node.content_url, target="_blank", klass="catalog_node_url have_url"):
+        with tag("span", crCatalogNodeContentUrl=catalog_node.content_url, klass="catalog_node_url have_url", onclick="onclickCatalogNode(this)"):
             text(catalog_node.catalog_name)
     #
     # else if no content url:
     else:
         # A tag but without url
-        with tag("a", klass="catalog_node_url no_url"):
+        with tag("span", klass="catalog_node_url no_url", onclick="onclickCatalogNode(this)"):
             text(catalog_node.catalog_name)
 
 
