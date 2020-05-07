@@ -120,8 +120,5 @@ def get_preprocessed_environment(environment_config):
     # Do this before preprocess data
     environment_config['output_catalog_html_resource'] = mDC
 
-    # Generate full path for data_catalog files
-    environment_config['data_catalog_html_resource']['css_file_full_path'] = mD['root_path'] + mDC['root_path'] + mDC['css_file_name']
-    environment_config['data_catalog_html_resource']['js_file_full_path'] = mD['root_path'] + mDC['root_path'] + mDC['js_file_name']
 
     return environment_config
