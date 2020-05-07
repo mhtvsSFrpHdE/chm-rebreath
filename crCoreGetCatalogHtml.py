@@ -105,6 +105,11 @@ def get_catalog_html_text(catalog_node):
         with tag("body", onload="onloadHtmlBody()"):
             # Catalog scope
             with tag("div", klass="sidebar"):
+                # Menu button
+                with tag("p"):
+                    with tag("img", src="catalog/icon/menu-24px.svg", klass="menu_button"):
+                        pass
+                doc.stag("br")
                 # Root unordered list
                 with tag("div", klass="catalog"):
                     with tag("ul", klass="catalog_node_list root"):
