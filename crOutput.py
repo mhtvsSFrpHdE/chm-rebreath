@@ -28,7 +28,7 @@ def copy_catalog_html_resource(output_folder_path):
     except:
         error_message = message_config_local['err']['failed_to_copy_file']
         crPrintCyan(error_message)
-        raise CrEnvironmentError(error_message)
+        raise
 
 
 def init_output(environment_config, message_config):
