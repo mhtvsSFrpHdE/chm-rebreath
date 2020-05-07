@@ -7,7 +7,8 @@
 	"settings": {
 		"python.formatting.autopep8Args": [
 			"--max-line-length=999"
-		]
+		],
+		"python.jediEnabled": false
 	},
 	"extensions": {
 		"recommendations": [
