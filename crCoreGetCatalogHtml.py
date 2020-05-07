@@ -104,10 +104,11 @@ def get_catalog_html_text(catalog_node):
         # Body & onLoad method
         with tag("body", onload="onloadHtmlBody()"):
             # Catalog scope
-            with tag("div", klass="catalog"):
+            with tag("div", klass="sidebar"):
                 # Root unordered list
-                with tag("ul", klass="catalog_node_list root"):
-                    _process_catalog_node(catalog_node, doc, tag, text)
+                with tag("div", klass="catalog"):
+                    with tag("ul", klass="catalog_node_list root"):
+                        _process_catalog_node(catalog_node, doc, tag, text)
 
     return doc.getvalue()
 
