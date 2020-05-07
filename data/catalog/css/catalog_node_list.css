@@ -1,0 +1,54 @@
+/* Code example */
+/* https://www.w3schools.com/howto/howto_js_treeview.asp */
+
+/* Style reference */
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started */
+
+/* Catalog node list default style */
+.catalog_node_list {
+  /* Add right margin for sidebar*/
+  margin-right: 16px;
+  /* Remove default symbol */
+  list-style-type: none;
+}
+
+/* Root catalog node list remove extra padding or set to default */
+.catalog_node_list.root {
+  padding-left: 16px;
+}
+
+/* While hovering catalog node with url */
+.catalog_node_url.have_url:hover {
+  /* Show previously removed underline*/
+  text-decoration: underline;
+}
+
+/* Create arrow for node that have sub node */
+/* Common style: ▶︎ ▼ ■ */
+.catalog_node.have_sub_node::before {
+  /* Reference: Tree view on any Mozilla MDN page */
+  content: "▶︎";
+  font-size: 0.6rem;
+  display: inline-block;
+  width: 20px;
+}
+
+/* Restore disc symbol for node that no sub node */
+.catalog_node.no_sub_node {
+  list-style-type: disc;
+}
+
+/* Rotate the arrow symbol when clicked on catalog node (using JavaScript) */
+.catalog_node.expanded::before {
+  transform: rotate(90deg);
+}
+
+/* Fold (hide) all catalog sub node list by default */
+.catalog_node.have_sub_node > .catalog_node_list.folded {
+  display: none;
+}
+
+/* Expand (show) catalog sub node list when click (with JavaScript) */
+.catalog_node_list.expanded {
+  display: block;
+}
