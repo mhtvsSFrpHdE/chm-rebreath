@@ -73,7 +73,7 @@ def get_catalog_chm_file_full_path():
             catalog_file_full_path = plPath(catalog_file_glob_result)
 
         # After explored the generator
-        if catalog_file_list_count is 0:
+        if catalog_file_list_count == 0:
             # Nothing found, raise error
             error_message = message_config_local['err']['catalog_file_not_found']
             crPrintCyan(error_message)
