@@ -79,8 +79,6 @@ def get_catalog_html_text(catalog_node):
     global message_config_local
 
     catalog_html_resource_root_path = environment_config_local['output_catalog_html_resource']['root_path']
-    catalog_style_path = catalog_html_resource_root_path + environment_config_local['data_catalog_html_resource']['css_file_name']
-    catalog_script_path = catalog_html_resource_root_path + environment_config_local['output_catalog_html_resource']['js_file_name']
 
     doc, tag, text = Doc().tagtext()
     doc.asis("<!DOCTYPE html>")
@@ -98,7 +96,6 @@ def get_catalog_html_text(catalog_node):
             doc.stag("link", rel="stylesheet", href=catalog_style_path)
 
             # JavaScript
-            with tag("script", "defer", src=catalog_script_path):
                 pass
 
         # Body & onLoad method
