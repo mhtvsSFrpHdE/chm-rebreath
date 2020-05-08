@@ -52,3 +52,8 @@
 .catalog_node_list.expanded {
   display: block;
 }
+
+/* Hide entire catalog node list when sidebar is folded */
+.hide {
+  display: none;
+}
