@@ -61,4 +61,6 @@ div.catalog {
 /* Hide entire catalog node list when sidebar is folded */
 .hide {
   display: none;
+  /* Hide scroll bar too */
+  overflow: hidden;
 }

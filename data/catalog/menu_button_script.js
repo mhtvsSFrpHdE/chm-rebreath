@@ -11,7 +11,7 @@ let menu_button_namespace = {
      * the root level one
      */
     getCatalogNodeList: function () {
-        let catalogNodeList = document.querySelector('.catalog_node_list.root');
+        let catalogNodeList = document.querySelector('.catalog');
         return catalogNodeList;
     },
 
