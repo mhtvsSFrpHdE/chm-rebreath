@@ -4,5 +4,5 @@
 from crCoreGetCatalogNode import get_catalog_node
 from crCoreGetCatalogNode import init_core_get_catalog_node
 
-from crCoreGetCatalogHtml import get_catalog_html_text
-from crCoreGetCatalogHtml import init_core_get_catalog_html
+from crCoreGetIndexHtml import get_index_html_text
+from crCoreGetIndexHtml import init_core_get_index_html

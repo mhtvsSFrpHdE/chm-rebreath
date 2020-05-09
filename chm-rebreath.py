@@ -20,7 +20,7 @@ def main():
         catalog_node = get_catalog_node(mySoup)
 
     # TODO: Test purpose code, move to other place later
-    catalog_html_text = get_catalog_html_text(catalog_node)
+    catalog_html_text = get_index_html_text(catalog_node)
     root_output_folder_full_path = get_root_output_folder_full_path()
     create_output_folder_structure(root_output_folder_full_path)
     
