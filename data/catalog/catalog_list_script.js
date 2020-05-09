@@ -20,19 +20,28 @@ let catalog_list_namespace = {
   /** Toggle catalog node list expand status between folded and expanded
    * via remove or add class attribute
    * 
+   * @param {*} catalogNodeTitle A element matching .catalog_node_url
    * @param {*} catalogNodeSubList A element matching .catalog_node_list
    */
-  toggleCatalogNodeListExpandStatus: function (catalogNodeList) {
-    // catalog node list is folded by default
-    let catalogNodeFolded = catalogNodeList.classList.contains("folded");
+  toggleCatalogNodeExpandStatus: function (catalogNodeTitle, catalogNodeSubList) {
+    // The two status should sync together so use one condition
+    let catalogNodeFolded = catalogNodeTitle.classList.contains("folded");
 
+    // if catalogNode is Folded
     if (catalogNodeFolded) {
-      catalogNodeList.classList.remove("folded");
-      catalogNodeList.classList.add("expanded");
+      catalogNodeTitle.classList.remove("folded");
+      catalogNodeTitle.classList.add("expanded");
+
+      catalogNodeSubList.classList.remove("folded");
+      catalogNodeSubList.classList.add("expanded");
     }
+    // else if catalogNode is Expanded
     else {
-      catalogNodeList.classList.remove("expanded");
-      catalogNodeList.classList.add("folded");
+      catalogNodeTitle.classList.remove("expanded");
+      catalogNodeTitle.classList.add("folded");
+
+      catalogNodeSubList.classList.remove("expanded");
+      catalogNodeSubList.classList.add("folded");
     }
   },
 
