@@ -5,7 +5,7 @@ let catalog_list_namespace = {
    *
    * @param {*} catalogNode A element matching .catalog_node
    */
-  getCatalogNodeList: function (catalogNode) {
+  getCatalogNodeSubList: function (catalogNode) {
     return catalogNode.children[1];
   },
 
@@ -22,7 +22,7 @@ let catalog_list_namespace = {
   /** Toggle catalog node list expand status between folded and expanded
    * via remove or add class attribute
    * 
-   * @param {*} catalogNodeList A element matching .catalog_node_list
+   * @param {*} catalogNodeSubList A element matching .catalog_node_list
    */
   toggleCatalogNodeListExpandStatus: function (catalogNodeList) {
     // catalog node list is folded by default
@@ -62,7 +62,7 @@ let catalog_list_namespace = {
     // Find and expand root level catalog node list
     // They are all folded by default
     let rootCatalogNode = document.querySelector('.catalog_node_list.root');
-    let rootCatalogNodeList = this.getRootCatalogNodeList(rootCatalogNode);
+    let rootCatalogNodeSubList = this.getCatalogNodeSubList(rootCatalogNodeTitle);
 
     this.toggleCatalogNodeListExpandStatus(rootCatalogNodeList);
   }
