@@ -76,6 +76,10 @@ def get_index_html_text(catalog_node):
                 with tag("div", klass="catalog"):
                     with tag("ul", klass="catalog_node_list root"):
                         process_catalog_node(catalog_node, doc, tag, text)
+            
+            # Content area
+            with tag("div", klass="content"):
+                text("Sample page")
 
     return doc.getvalue()
 
