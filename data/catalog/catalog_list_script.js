@@ -9,14 +9,12 @@ let catalog_list_namespace = {
     return catalogNode.children[1];
   },
 
-  /** Export catalog node list element from given li element,
-   * but the one come directly with root element.
-   *
-   * @param {*} catalogNodeListRoot A element matching .catalog_node_list.root
-   */
-  getRootCatalogNodeList: function (catalogNodeListRoot) {
-    let catalogNode = catalogNodeListRoot.children[0];
-    return this.getCatalogNodeList(catalogNode);
+  /** Export catalog node title element from given li element
+   * 
+   * @param {*} catalogNode A element matching .catalog_node
+  */
+  getCatalogNodeTitle: function (catalogNode) {
+    return catalogNode.children[0];
   },
 
   /** Toggle catalog node list expand status between folded and expanded
@@ -62,8 +60,8 @@ let catalog_list_namespace = {
     // Find and expand root level catalog node list
     // They are all folded by default
     let rootCatalogNode = document.querySelector('.catalog_node_list.root');
+    let rootCatalogNodeTitle = this.getCatalogNodeTitle(rootCatalogNode);
     let rootCatalogNodeSubList = this.getCatalogNodeSubList(rootCatalogNodeTitle);
 
-    this.toggleCatalogNodeListExpandStatus(rootCatalogNodeList);
   }
 }
