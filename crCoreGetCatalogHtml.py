@@ -29,14 +29,14 @@ def process_catalog_node(catalog_node, doc, tag, text):
     # A catalog node have two status
     if catalog_node.have_sub_node == False:
         # li with no_sub_node class
-        with tag("li", klass="catalog_node no_sub_node"):
+        with tag("li", klass="catalog_node no_sub_node folded"):
             # Name & Url
             _get_content_url_tag(catalog_node, doc, tag, text)
     #
     # else if catalog_node.have_sub_node:
     else:
         # li with have_sub_node class
-        with tag("li", klass="catalog_node have_sub_node"):
+        with tag("li", klass="catalog_node have_sub_node folded"):
             # Name & Url
             _get_content_url_tag(catalog_node, doc, tag, text)
 
