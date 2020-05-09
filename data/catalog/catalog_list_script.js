@@ -9,6 +9,7 @@ let catalog_list_namespace = {
     return catalogNode.children[1];
   },
 
+
   /** Export catalog node title element from given li element
    * 
    * @param {*} catalogNode A element matching .catalog_node
@@ -109,8 +110,11 @@ let catalog_list_namespace = {
 
 
   /** When click on every catalog node title text
-   * If it's parent element can tell it have sub node
-   * locate the sub node list and toggle its expand status
+   * 
+   * Update page canvas url if available
+   * 
+   * Locate the sub node list and toggle its expand status
+   * if it's parent element can tell it have sub node
    * 
    * @param {*} event Element which fired event
    */
