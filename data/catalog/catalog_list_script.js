@@ -18,6 +18,48 @@ let catalog_list_namespace = {
   },
 
 
+  /** Get content page canvas
+   * 
+   */
+  getPageCanvas: function () {
+    let pageCanvas = document.querySelector('.page_canvas');
+    return pageCanvas;
+  },
+
+
+  /** Export catalog node url from attribute
+   * return url or false if there is no url out there
+   * 
+   * @param {*} event click event object, should be span, the text
+   */
+  getCatalogNodeUrl: function (event) {
+    let catalogNodeUrl = event.getAttribute('crCatalogNodeUrl');
+
+    // if not null
+    if (catalogNodeUrl !== null) {
+      return catalogNodeUrl;
+    }
+    // if null
+    else {
+      return false;
+    }
+  },
+
+
+  /** Update content iframe url 
+   * 
+   * @param {*} event click event object, should be span, the text
+  */
+  updatePageCanvasUrl: function (event) {
+    let pageCanvas = this.getPageCanvas();
+    let catalogNodeUrl = this.getCatalogNodeUrl(event);
+
+    if (catalogNodeUrl !== false) {
+      pageCanvas.src = catalogNodeUrl;
+    }
+  },
+
+
   /** Toggle catalog node list expand status between folded and expanded
    * via remove or add class attribute
    * 
@@ -73,6 +115,8 @@ let catalog_list_namespace = {
    * @param {*} event Element which fired event
    */
   onclickCatalogNode: function (event) {
+    // Update content iframe url
+    this.updatePageCanvasUrl(event);
 
     // These are sub node related
     this.toggleCatalogNodeExpandStatusOnClickEntry(event);
