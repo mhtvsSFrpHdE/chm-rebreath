@@ -15,6 +15,14 @@ let menu_button_namespace = {
         return catalogNodeList;
     },
 
+    /** Get content area for later use 
+     * 
+    */
+    getContentArea: function () {
+        let contentArea = document.querySelector('.content');
+        return contentArea;
+    },
+
     /** Toggle sidebar and related elements expand status
      * some element need to be hidden after fold
      * restore after expand
@@ -39,6 +47,17 @@ let menu_button_namespace = {
             catalogNodeList.classList.add("hide");
         }
     },
+
+    /** Update content area margin left dynamically by matching sidebar width
+     * in order to prevent content overlap
+     */
+    updateContentAreaMargin: function () {
+        let sidebarWidth = `${this.getSidebar().offsetWidth}px`;
+        let contentArea = this.getContentArea();
+
+        contentArea.style.marginLeft = sidebarWidth;
+    },
+
     /** When click on menu button
      *
      * change the sidebar fold/expand status
