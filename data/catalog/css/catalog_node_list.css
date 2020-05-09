@@ -39,8 +39,8 @@
 }
 
 /* Rotate the arrow symbol when clicked on catalog node (using JavaScript) */
-.catalog_node.expanded::before {
-  transform: rotate(90deg);
+.catalog_node.have_sub_node.expanded::before {
+  content: "▼";
 }
 
 /* Fold (hide) all catalog sub node list by default */
