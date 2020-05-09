@@ -45,6 +45,19 @@ let catalog_list_namespace = {
     }
   },
 
+  /** Same as toggleCatalogNodeExpandStatus but for click event
+   * the two situation have different entry point
+   * 
+   * @param {*} event click event object, should be span, the text
+   */
+  onclickToggleCatalogNodeExpandStatus: function (event) {
+    let catalogNodeTitle = event.parentElement;
+    let catalogNodeSubList = event.nextElementSibling;
+
+    this.toggleCatalogNodeExpandStatus(catalogNodeTitle, catalogNodeSubList);
+  },
+
+
   /** When click on every catalog node title text
    * If it's parent element can tell it have sub node
    * locate the sub node list and toggle its expand status
@@ -57,9 +70,7 @@ let catalog_list_namespace = {
     // If not, stop execute
     if (haveSubNode === false) return;
 
-    let catalogNodeList = event.nextElementSibling;
-
-    this.toggleCatalogNodeListExpandStatus(catalogNodeList);
+    this.onclickToggleCatalogNodeExpandStatus(event);
   },
 
   /** Initialize catalog div
@@ -72,5 +83,6 @@ let catalog_list_namespace = {
     let rootCatalogNodeTitle = this.getCatalogNodeTitle(rootCatalogNode);
     let rootCatalogNodeSubList = this.getCatalogNodeSubList(rootCatalogNodeTitle);
 
+    this.toggleCatalogNodeExpandStatus(rootCatalogNodeTitle, rootCatalogNodeSubList);
   }
 }
