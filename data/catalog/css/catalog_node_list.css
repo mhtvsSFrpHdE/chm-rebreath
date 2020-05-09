@@ -4,6 +4,11 @@
 /* Style reference */
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started */
 
+/* Scroll the div to prevent menu button disappear after scroll down*/
+div.catalog {
+  overflow: hidden;
+}
+
 /* Catalog node list default style */
 .catalog_node_list {
   /* Add right margin for sidebar*/
