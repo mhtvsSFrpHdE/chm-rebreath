@@ -17,6 +17,7 @@ let catalog_list_namespace = {
     return catalogNode.children[0];
   },
 
+
   /** Toggle catalog node list expand status between folded and expanded
    * via remove or add class attribute
    * 
@@ -45,6 +46,7 @@ let catalog_list_namespace = {
     }
   },
 
+
   /** Same as toggleCatalogNodeExpandStatus but for click event
    * the two situation have different entry point
    * 
@@ -72,6 +74,7 @@ let catalog_list_namespace = {
 
     this.onclickToggleCatalogNodeExpandStatus(event);
   },
+
 
   /** Initialize catalog div
    * 
