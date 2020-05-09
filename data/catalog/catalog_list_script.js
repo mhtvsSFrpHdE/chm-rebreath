@@ -52,7 +52,7 @@ let catalog_list_namespace = {
    * 
    * @param {*} event click event object, should be span, the text
    */
-  onclickToggleCatalogNodeExpandStatus: function (event) {
+  toggleCatalogNodeExpandStatusOnClickEntry: function (event) {
     let catalogNodeTitle = event.parentElement;
     let catalogNodeSubList = event.nextElementSibling;
 
@@ -72,7 +72,7 @@ let catalog_list_namespace = {
     // If not, stop execute
     if (haveSubNode === false) return;
 
-    this.onclickToggleCatalogNodeExpandStatus(event);
+    this.toggleCatalogNodeExpandStatusOnClickEntry(event);
   },
 
 
