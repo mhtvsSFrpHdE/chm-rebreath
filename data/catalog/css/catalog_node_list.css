@@ -6,7 +6,7 @@
 
 /* Scroll the div to prevent menu button disappear after scroll down*/
 div.catalog {
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Catalog node list default style */

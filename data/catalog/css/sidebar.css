@@ -6,4 +6,6 @@
     position: fixed;
     height: 100%;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
