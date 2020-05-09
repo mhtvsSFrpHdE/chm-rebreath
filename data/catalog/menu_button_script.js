@@ -15,12 +15,9 @@ let menu_button_namespace = {
         return catalogNodeList;
     },
 
-    /** When click on menu button
-     * should change the sidebar fold/expand status
      * some element need to be hidden after fold
      * restore after expand
      */
-    onclickMenuButton: function () {
         let sidebar = this.getSidebar();
         let catalogNodeList = this.getCatalogNodeList();
         // Menu button is expanded by default
@@ -39,5 +36,11 @@ let menu_button_namespace = {
 
             catalogNodeList.classList.add("hide");
         }
+    /** When click on menu button
+     *
+     * change the sidebar fold/expand status
+     * change content area margin left to prevent overlapping
+     */
+    onclickMenuButton: function () {
     }
 }
