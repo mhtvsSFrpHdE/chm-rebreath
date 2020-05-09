@@ -64,5 +64,7 @@ let menu_button_namespace = {
      * change content area margin left to prevent overlapping
      */
     onclickMenuButton: function () {
+        this.toggleSidebarExpandStatus();
+        this.updateContentAreaMargin();
     }
 }
