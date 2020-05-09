@@ -15,7 +15,7 @@ def _get_content_url_tag(catalog_node, doc, tag, text):
     # else if no content url:
     else:
         # A tag but without url
-        with tag("span", klass="catalog_node_url no_url", onclick="onclickCatalogNode(this)"):
+        with tag("span", klass="catalog_node_url no_url", onclick="catalog_list_namespace.onclickCatalogNode(this)"):
             text(catalog_node.catalog_name)
 
 
