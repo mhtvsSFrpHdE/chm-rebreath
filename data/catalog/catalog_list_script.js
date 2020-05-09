@@ -53,6 +53,12 @@ let catalog_list_namespace = {
    * @param {*} event click event object, should be span, the text
    */
   toggleCatalogNodeExpandStatusOnClickEntry: function (event) {
+    // Check if this one have sub node
+    let haveSubNode = event.parentElement.classList.contains("have_sub_node");
+    // If not, stop execute
+    if (haveSubNode === false) return;
+
+    // Or toggle this sub node
     let catalogNodeTitle = event.parentElement;
     let catalogNodeSubList = event.nextElementSibling;
 
@@ -67,11 +73,8 @@ let catalog_list_namespace = {
    * @param {*} event Element which fired event
    */
   onclickCatalogNode: function (event) {
-    // Check if this one have sub node
-    let haveSubNode = event.parentElement.classList.contains("have_sub_node");
-    // If not, stop execute
-    if (haveSubNode === false) return;
 
+    // These are sub node related
     this.toggleCatalogNodeExpandStatusOnClickEntry(event);
   },
 
