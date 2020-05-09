@@ -9,7 +9,7 @@ def _get_content_url_tag(catalog_node, doc, tag, text):
     #
     # If have content url:
     if catalog_node.have_content_url:
-        with tag("span", crCatalogNodeContentUrl=catalog_node.content_url, klass="catalog_node_url have_url", onclick="catalog_list_namespace.onclickCatalogNode(this)"):
+        with tag("span", crCatalogNodeUrl=catalog_node.content_url, klass="catalog_node_url have_url", onclick="catalog_list_namespace.onclickCatalogNode(this)"):
             text(catalog_node.catalog_name)
     #
     # else if no content url:

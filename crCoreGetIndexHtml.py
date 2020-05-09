@@ -79,7 +79,8 @@ def get_index_html_text(catalog_node):
             
             # Content area
             with tag("div", klass="content"):
-                text("Sample page")
+                with tag("iframe", klass="page_canvas"):
+                    pass
 
     return doc.getvalue()
 
