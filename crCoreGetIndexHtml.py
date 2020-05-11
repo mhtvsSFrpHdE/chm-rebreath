@@ -85,7 +85,7 @@ def get_index_html_text(catalog_node):
             with tag("div", klass="sidebar expanded"):
                 # Menu button
                 with tag("p"):
-                    with tag("img", src="catalog/icon/menu-24px.svg", klass="menu_button", onclick="menu_button_namespace.onclickMenuButton()"):
+                    with tag("img", src="catalog/icon/menu-24px.svg", klass="menu_button", onclick="menu_button_script_namespace.onclickMenuButton()"):
                         pass
                 doc.stag("br")
                 # Root unordered list

@@ -1,20 +1,6 @@
 // https://www.w3schools.com/howto/howto_js_treeview.asp
 
-let catalog_node_list_namespace = {
-  /** Update content iframe url 
-   * 
-   * @param {*} event click event object, should be span, the text
-  */
-  updatePageCanvasUrl: function (event) {
-    let pageCanvas = page_canvas_namespace.getPageCanvas();
-    let catalogNodeUrl = catalog_node_list_getter_namespace.getCatalogNodeUrl(event);
-
-    if (catalogNodeUrl !== false) {
-      pageCanvas.src = catalogNodeUrl;
-    }
-  },
-
-
+let catalog_node_list_script_namespace = {
   /** Toggle catalog node list expand status between folded and expanded
    * via remove or add class attribute
    * 
@@ -74,7 +60,7 @@ let catalog_node_list_namespace = {
    */
   onclickCatalogNode: function (event) {
     // Update content iframe url
-    this.updatePageCanvasUrl(event);
+    page_canvas_script_namespace.updatePageCanvasUrl(event);
 
     // These are sub node related
     this.toggleCatalogNodeExpandStatusOnClickEntry(event);

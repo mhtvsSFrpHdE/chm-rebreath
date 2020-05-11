@@ -1,4 +1,4 @@
-let menu_button_namespace = {
+let menu_button_script_namespace = {
     /** Toggle sidebar and related elements expand status
      * some element need to be hidden after fold
      * restore after expand
