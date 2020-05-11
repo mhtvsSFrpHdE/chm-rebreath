@@ -53,34 +53,38 @@ def get_index_html_text(catalog_node):
 
             # JavaScript
             catalog_node_list_getter_path = catalog_html_resource_root_path + 'catalog_node_list_getter.js'
-            with tag("script", "defer", src=catalog_node_list_getter_path):
+            with tag("script", src=catalog_node_list_getter_path):
                 pass
-            catalog_node_list_script_path = catalog_html_resource_root_path + 'catalog_list_script.js'
-            with tag("script", "defer", src=catalog_node_list_script_path):
+            catalog_node_list_script_path = catalog_html_resource_root_path + 'catalog_node_list_script.js'
+            with tag("script", src=catalog_node_list_script_path):
                 pass
 
             content_area_getter_path = catalog_html_resource_root_path + 'content_area_getter.js'
-            with tag("script", "defer", src=content_area_getter_path):
+            with tag("script", src=content_area_getter_path):
                 pass
 
-            html_body_script_path = catalog_html_resource_root_path + 'html_body_script.js'
-            with tag("script", "defer", src=html_body_script_path):
-                pass
-            
             menu_button_script_path = catalog_html_resource_root_path + 'menu_button_script.js'
-            with tag("script", "defer", src=menu_button_script_path):
+            with tag("script", src=menu_button_script_path):
                 pass
 
             page_canvas_getter_path = catalog_html_resource_root_path + 'page_canvas_getter.js'
-            with tag("script", "defer", src=page_canvas_getter_path):
+            with tag("script", src=page_canvas_getter_path):
+                pass
+            page_canvas_script_path = catalog_html_resource_root_path + 'page_canvas_script.js'
+            with tag("script", src=page_canvas_script_path):
                 pass
 
             sidebar_getter_path = catalog_html_resource_root_path + 'sidebar_getter.js'
-            with tag("script", "defer", src=sidebar_getter_path):
+            with tag("script", src=sidebar_getter_path):
                 pass
 
-        # Body & onLoad method
-        with tag("body", onload="onloadHtmlBody()"):
+            # DOMContentLoaded method
+            dom_content_loaded_script_path = catalog_html_resource_root_path + 'dom_content_loaded_script.js'
+            with tag("script", src=dom_content_loaded_script_path):
+                pass
+
+        # Body
+        with tag("body"):
             # Catalog scope
             with tag("div", klass="sidebar expanded"):
                 # Menu button
