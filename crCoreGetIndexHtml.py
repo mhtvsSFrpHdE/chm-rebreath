@@ -35,11 +35,6 @@ def get_index_html_text(catalog_node):
 
     catalog_html_resource_root_path = environment_config_local['output_catalog_html_resource']['root_path']
 
-    catalog_style_path = catalog_html_resource_root_path + 'style.css'
-    catalog_list_script_path = catalog_html_resource_root_path + 'catalog_list_script.js'
-    menu_button_script_path = catalog_html_resource_root_path + 'menu_button_script.js'
-    html_body_script_path = catalog_html_resource_root_path + 'html_body_script.js'
-
     doc, tag, text = Doc().tagtext()
     doc.asis("<!DOCTYPE html>")
     with tag("html", lang=_get_html_language()):
@@ -53,14 +48,35 @@ def get_index_html_text(catalog_node):
                      message_config_local['html_catalog']['title'])
 
             # CSS
+            catalog_style_path = catalog_html_resource_root_path + 'style.css'
             doc.stag("link", rel="stylesheet", href=catalog_style_path)
 
             # JavaScript
-            with tag("script", "defer", src=catalog_list_script_path):
+            catalog_node_list_getter_path = catalog_html_resource_root_path + 'catalog_node_list_getter.js'
+            with tag("script", "defer", src=catalog_node_list_getter_path):
                 pass
+            catalog_node_list_script_path = catalog_html_resource_root_path + 'catalog_list_script.js'
+            with tag("script", "defer", src=catalog_node_list_script_path):
+                pass
+
+            content_area_getter_path = catalog_html_resource_root_path + 'content_area_getter.js'
+            with tag("script", "defer", src=content_area_getter_path):
+                pass
+
+            html_body_script_path = catalog_html_resource_root_path + 'html_body_script.js'
+            with tag("script", "defer", src=html_body_script_path):
+                pass
+            
+            menu_button_script_path = catalog_html_resource_root_path + 'menu_button_script.js'
             with tag("script", "defer", src=menu_button_script_path):
                 pass
-            with tag("script", "defer", src=html_body_script_path):
+
+            page_canvas_getter_path = catalog_html_resource_root_path + 'page_canvas_getter.js'
+            with tag("script", "defer", src=page_canvas_getter_path):
+                pass
+
+            sidebar_getter_path = catalog_html_resource_root_path + 'sidebar_getter.js'
+            with tag("script", "defer", src=sidebar_getter_path):
                 pass
 
         # Body & onLoad method
