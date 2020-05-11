@@ -1,36 +1,12 @@
 let menu_button_namespace = {
-    /** Get sidebar for later use
-     * 
-     */
-    getSidebar: function () {
-        let sidebar = document.querySelector('.sidebar');
-        return sidebar;
-    },
-
-    /** Get catalog node list for later use
-     * the root level one
-     */
-    getCatalogNodeList: function () {
-        let catalogNodeList = document.querySelector('.catalog');
-        return catalogNodeList;
-    },
-
-    /** Get content area for later use 
-     * 
-    */
-    getContentArea: function () {
-        let contentArea = document.querySelector('.content');
-        return contentArea;
-    },
-
     /** Toggle sidebar and related elements expand status
      * some element need to be hidden after fold
      * restore after expand
      */
     toggleSidebarExpandStatus: function () {
         // Fold or expand sidebar and catalog node list
-        let sidebar = this.getSidebar();
-        let catalogNodeList = this.getCatalogNodeList();
+        let sidebar = sidebar_getter_namespace.getSidebar();
+        let catalogNodeListContainer = catalog_node_list_getter_namespace.getCatalogNodeListContainer();
 
         // sidebar is expanded by default
         let sidebarFolded = sidebar.classList.contains("folded");
@@ -38,13 +14,13 @@ let menu_button_namespace = {
             sidebar.classList.remove("folded");
             sidebar.classList.add("expanded");
 
-            catalogNodeList.classList.remove("hide");
+            catalogNodeListContainer.classList.remove("hide");
         }
         else {
             sidebar.classList.remove("expanded");
             sidebar.classList.add("folded");
 
-            catalogNodeList.classList.add("hide");
+            catalogNodeListContainer.classList.add("hide");
         }
     },
 
@@ -52,8 +28,8 @@ let menu_button_namespace = {
      * in order to prevent content overlap
      */
     updateContentAreaMargin: function () {
-        let sidebarWidth = `${this.getSidebar().offsetWidth}px`;
-        let contentArea = this.getContentArea();
+        let sidebarWidth = `${sidebar_getter_namespace.getSidebar().offsetWidth}px`;
+        let contentArea = content_area_getter_namespace.getContentArea();
 
         contentArea.style.marginLeft = sidebarWidth;
     },
