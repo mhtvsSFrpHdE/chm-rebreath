@@ -1,0 +1,9 @@
+.content {
+  height: 100%;
+}
+
+.page_canvas {
+  /* Remove scrollbar */
+  height: 99%;
+  width: 99%;
+}
