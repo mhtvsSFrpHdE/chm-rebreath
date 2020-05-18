@@ -1,3 +1,9 @@
+# Python import search path
+import sys
+sys.path.append('./src/crBootstrap')
+sys.path.append('./src/crCore')
+sys.path.append('./src/crOutput')
+
 # 3rd
 from bs4 import BeautifulSoup  # HTML parsing
 
