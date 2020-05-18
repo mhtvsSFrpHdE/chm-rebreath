@@ -1,22 +1,22 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"python.formatting.autopep8Args": [
-			"--max-line-length=999"
-		],
-		"python.jediEnabled": false,
-		"editor.detectIndentation": false
-	},
-	"extensions": {
-		"recommendations": [
-			"ms-python.python",
-			"magicstack.magicpython",
-			"tabnine.tabnine-vscode",
-			"esbenp.prettier-vscode"
-		]
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.formatting.autopep8Args": [
+            "--max-line-length=999"
+        ],
+        "python.jediEnabled": false,
+        "editor.detectIndentation": false
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-python.python",
+            "magicstack.magicpython",
+            "tabnine.tabnine-vscode",
+            "esbenp.prettier-vscode"
+        ]
+    }
 }
