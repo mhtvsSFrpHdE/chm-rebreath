@@ -9,7 +9,8 @@
             "--max-line-length=999"
         ],
         "python.jediEnabled": false,
-        "editor.detectIndentation": false
+        "editor.detectIndentation": false,
+        "python.pythonPath": "${workspaceFolder}/.venv/Scripts/python"
     },
     "extensions": {
         "recommendations": [
