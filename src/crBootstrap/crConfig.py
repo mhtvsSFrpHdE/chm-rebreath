@@ -91,6 +91,6 @@ def init_config():
         _load_magic_value_config()
         # Apply preprocessor
         global magic_value_config
-        magic_value_config = get_preprocessed_magic_value(magic_value_config)
+        # Not required yet
     except:
         raise
