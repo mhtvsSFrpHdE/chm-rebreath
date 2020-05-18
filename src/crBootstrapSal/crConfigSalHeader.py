@@ -1,0 +1,1 @@
+from crConfigSal import init_config_sal

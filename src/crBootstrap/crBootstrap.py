@@ -22,4 +22,4 @@ from crEnvironmentHeader import *  # NOQA: E402
 
 # Some module require config file to initialize,
 # call the init method here
-init_environment(message_config, magic_value_config)
+init_environment(message_config)

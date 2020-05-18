@@ -77,7 +77,7 @@ def init_config():
         global environment_config
         environment_config = get_environment_locale(environment_config)
         # Apply preprocessor
-        environment_config = get_preprocessed_environment(environment_config)
+        # Not required yet
 
         # Message
         #
