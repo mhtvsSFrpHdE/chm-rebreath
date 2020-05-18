@@ -49,6 +49,7 @@ def main():
 
 main()
 
+# If any error occurred during execute
 # This statements is false
-# If any error occurred before
+# (Will not add to log file)
 logging.info("#========= End properly after main() =#")  # NOQA: E402
