@@ -13,6 +13,8 @@ from crBootstrap import *
 from crBootstrapSalHeader import *
 from crLogHeader import *
 
+# These three variable are imported by crBootstrap
+# Then apply project dependent preprocessors by crBootstrapSal
 environment_config, magic_value_config, message_config = init_bootstrap_sal(environment_config, magic_value_config, message_config)
 
 # All returned path musb be pathlib path
