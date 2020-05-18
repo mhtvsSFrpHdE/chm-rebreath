@@ -6,12 +6,12 @@ sys.path.append('./src/crCore')
 sys.path.append('./src/crOutput')
 
 # 3rd
-from bs4 import BeautifulSoup  # HTML parsing
+from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
 
 # My
-from crBootstrap import *
-from crBootstrapSalHeader import *
-from crLogHeader import *
+from crBootstrap import *  # NOQA: E402
+from crBootstrapSalHeader import *  # NOQA: E402
+from crLogHeader import *  # NOQA: E402
 
 # These three variable are imported by crBootstrap
 # Then apply project dependent preprocessors by crBootstrapSal
@@ -26,7 +26,7 @@ def main():
     # Catalog node placeholder
     catalog_node = None
 
-    # Open 
+    # Open
     with open(get_catalog_chm_file_full_path(), "rb") as chm_catalog_file:
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
         catalog_node = get_catalog_node(mySoup)
@@ -35,7 +35,7 @@ def main():
     catalog_html_text = get_index_html_text(catalog_node)
     root_output_folder_full_path = get_root_output_folder_full_path()
     create_output_folder_structure(root_output_folder_full_path)
-    
+
     catalog_html_output_full_path = get_catalog_html_output_full_path(catalog_node.catalog_name)
     catalog_html_resource_output_full_path = get_catalog_html_resource_output_full_path(root_output_folder_full_path)
 
