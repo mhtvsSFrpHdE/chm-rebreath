@@ -1,6 +1,7 @@
 # Python import search path
 import sys
 sys.path.append('./src/crBootstrap')
+sys.path.append('./src/crBootstrapSal')
 sys.path.append('./src/crCore')
 sys.path.append('./src/crOutput')
 
@@ -9,7 +10,10 @@ from bs4 import BeautifulSoup  # HTML parsing
 
 # My
 from crBootstrap import *
+from crBootstrapSalHeader import *
 from crLogHeader import *
+
+init_bootstrap_sal(environment_config, magic_value_config, message_config)
 
 # All returned path musb be pathlib path
 

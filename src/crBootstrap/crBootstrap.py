@@ -18,12 +18,8 @@ init_argument_parser()
 # Other modules
 from crConfigHeader import *  # NOQA: E402
 from crEnvironmentHeader import *  # NOQA: E402
-from crCoreHeader import *  # NOQA: E402
-from crOutputHeader import *  # NOQA: E402
+
 
 # Some module require config file to initialize,
 # call the init method here
 init_environment(message_config, magic_value_config)
-init_core_get_catalog_node(environment_config, message_config)
-init_core_get_index_html(environment_config, message_config)
-init_output(environment_config, message_config)
