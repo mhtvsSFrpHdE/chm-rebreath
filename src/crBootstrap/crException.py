@@ -19,6 +19,3 @@ class CrNotImplementedError(CrBaseError):
 
 class CrEnvironmentError(CrBaseError):
     pass
-
-class CrObjectTagNotFoundInCatalogChmError(CrBaseError):
-    pass

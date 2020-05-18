@@ -5,7 +5,7 @@ from pathlib import Path as plPath  # Path
 from os import path as osPath
 
 # My
-from crException import *
+from crExceptionSal import *
 from crLogHeader import *
 import crDevInput  # Information used while development
 

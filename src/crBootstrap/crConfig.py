@@ -10,7 +10,7 @@ from crLocaleHeader import *
 from crEnvironmentHeader import *
 from crMagicValueHeader import *
 from crMessageHeader import *
-from crException import *
+from crExceptionSal import *
 
 # Config object placeholder
 environment_config = configparser.RawConfigParser()

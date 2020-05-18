@@ -1,7 +1,7 @@
 from pathlib import Path as plPath
 from shutil import copytree
 
-from crException import *
+from crExceptionSal import *
 from crLogHeader import *
 from crEnvironmentHeader import crCreateFolder
 

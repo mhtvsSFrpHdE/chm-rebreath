@@ -1,5 +1,5 @@
 # My
-from crException import *
+from crExceptionSal import *
 from crLogHeader import *
 
 # Receive a BeautifulSoup soup object,
