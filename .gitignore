@@ -98,7 +98,7 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
+# .env # For fine tune pylint with vscode and custom module search path
 .venv
 env/
 venv/
