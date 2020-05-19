@@ -17,9 +17,9 @@ init_argument_parser()
 
 # Other modules
 from crConfigHeader import *  # NOQA: E402
-from crEnvironmentHeader import *  # NOQA: E402
+import crEnvironmentHeader as crEnvironment  # NOQA: E402
 
 
 # Some module require config file to initialize,
 # call the init method here
-init_environment(message_config)
+crEnvironment.init_environment(message_config)

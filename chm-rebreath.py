@@ -1,6 +1,7 @@
 # Python import search path
 import sys
-sys.path.append('./src/crBootstrap')
+sys.path.append('./src/thirdParty/crBootstrap')
+sys.path.append('./src/thirdParty/cstpw')
 sys.path.append('./src/crBootstrapSal')
 sys.path.append('./src/crCore')
 sys.path.append('./src/crOutput')
@@ -10,7 +11,7 @@ from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
 
 # My
 from crBootstrap import *  # NOQA: E402
-from crBootstrapSalHeader import *  # NOQA: E402
+from crBootstrapSal import *  # NOQA: E402
 from crLogHeader import *  # NOQA: E402
 
 # These three variable are imported by crBootstrap
@@ -27,22 +28,22 @@ def main():
     catalog_node = None
 
     # Open
-    with open(get_catalog_chm_file_full_path(), "rb") as chm_catalog_file:
+    with open(crEnvironmentSal.get_catalog_chm_file_full_path(), "rb") as chm_catalog_file:
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
-        catalog_node = get_catalog_node(mySoup)
+        catalog_node = crCore.get_catalog_node(mySoup)
 
     # TODO: Test purpose code, move to other place later
-    catalog_html_text = get_index_html_text(catalog_node)
-    root_output_folder_full_path = get_root_output_folder_full_path()
-    create_output_folder_structure(root_output_folder_full_path)
+    catalog_html_text = crCore.get_index_html_text(catalog_node)
+    root_output_folder_full_path = crEnvironmentSal.get_root_output_folder_full_path()
+    crOutput.create_output_folder_structure(root_output_folder_full_path)
 
-    catalog_html_output_full_path = get_catalog_html_output_full_path(catalog_node.catalog_name)
-    catalog_html_resource_output_full_path = get_catalog_html_resource_output_full_path(root_output_folder_full_path)
+    catalog_html_output_full_path = crEnvironmentSal.get_catalog_html_output_full_path(catalog_node.catalog_name)
+    catalog_html_resource_output_full_path = crOutput.get_catalog_html_resource_output_full_path(root_output_folder_full_path)
 
     with open(catalog_html_output_full_path, "w+", encoding="utf-8") as catalog_html_file:
         catalog_html_file.write(catalog_html_text)
 
-    copy_catalog_html_resource(catalog_html_resource_output_full_path)
+    crOutput.copy_catalog_html_resource(catalog_html_resource_output_full_path)
 
 
 # }
