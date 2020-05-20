@@ -10,9 +10,7 @@ logging.basicConfig(filename="log.txt", level=logging.INFO)  # NOQA: E402
 logging.info("#========= Start =========#")  # NOQA: E402
 
 # Prepare command line arguments at the very beginning
-from crArgumentParserHeader import *
-
-init_argument_parser()
+from crArgumentParser import *
 
 
 # Other modules
