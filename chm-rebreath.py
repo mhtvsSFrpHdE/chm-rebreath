@@ -5,6 +5,7 @@ sys.path.append('./src/thirdParty/cstpw')
 sys.path.append('./src/crBootstrapSal')
 sys.path.append('./src/crCore')
 sys.path.append('./src/crOutput')
+sys.path.append('./src/crUnpack')
 
 # 3rd
 from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
@@ -48,7 +49,8 @@ def main():
 
 # }
 
-main()
+# main()
+crUnpack.unpack_chm_file()
 
 # If any error occurred during execute
 # This statements is false
