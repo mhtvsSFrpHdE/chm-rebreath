@@ -5,7 +5,6 @@ from pathlib import Path as plPath
 from os import path as osPath
 
 # My
-from crEnvironmentHeader import *
 from crLog import *
 from crLocale import *
 from crMagicValuePreprocess import *

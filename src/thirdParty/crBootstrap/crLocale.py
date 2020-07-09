@@ -6,6 +6,7 @@ from os import path as osPath
 from pathlib import Path as plPath
 
 # Shortcut to getdefaultlocale()[0]
+# Expected result: "en_US"
 
 
 def get_system_language():
