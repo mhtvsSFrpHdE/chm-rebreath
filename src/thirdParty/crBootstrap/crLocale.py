@@ -38,8 +38,8 @@ def _my_locale_parser(config_environment):
 
     return config_environment
 
-# get_environment_locale
+# apply_locale_to_environment_config
 
 
-def get_environment_locale(config_environment):
+def apply_locale_to_environment_config(config_environment):
     return _my_locale_parser(config_environment)

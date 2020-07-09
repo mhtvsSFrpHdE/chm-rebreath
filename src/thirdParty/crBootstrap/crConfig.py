@@ -32,6 +32,12 @@ def _load_environment_config():
 
     environment_config.read(environment_config_path)
 
+    # Apply locale
+    environment_config = apply_locale_to_environment_config(environment_config)
+
+    # Apply preprocessor(Not required yet)
+    #environment_config = get_preprocessed_environment(environment_config)
+
 
 def _load_message_config():
     global message_config
@@ -46,6 +52,9 @@ def _load_message_config():
         raise CrFileNotFoundError(error_message)
 
     message_config.read(message_config_path, encoding='utf-8')
+
+    # Apply preprocessor
+    message_config = get_preprocessed_message(message_config)
 
 
 def _load_magic_value_config():
@@ -63,38 +72,14 @@ def _load_magic_value_config():
 
     magic_value_config.read(magic_value_config_path)
 
+    # Apply preprocessor(Not required yet)
+    #magic_value_config = get_preprocessed_magic_value(magic_value_config)
+
 
 # init_config
-
-
-def _init_config():
-    try:
-        # Environment
-        #
-        _load_environment_config()
-        # Apply locale
-        global environment_config
-        environment_config = get_environment_locale(environment_config)
-        # Apply preprocessor
-        # Not required yet
-
-        # Message
-        #
-        _load_message_config()
-        # Apply preprocessor
-        global message_config
-        message_config = get_preprocessed_message(message_config)
-
-        # Magic value
-        #
-        _load_magic_value_config()
-        # Apply preprocessor
-        global magic_value_config
-        # Not required yet
-    except:
-        raise
-
-# Run function
-
-
-_init_config()
+try:
+    _load_environment_config()
+    _load_message_config()
+    _load_magic_value_config()
+except:
+    raise
