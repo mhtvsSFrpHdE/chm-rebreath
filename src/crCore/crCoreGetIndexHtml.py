@@ -2,8 +2,8 @@
 from yattag import Doc  # Generate HTML
 
 # My
-from crLogHeader import *
-from crLocaleHeader import *
+from crLog import *
+from crLocale import *
 from crCoreGetCatalogHtml import process_catalog_node
 
 # Module scope config

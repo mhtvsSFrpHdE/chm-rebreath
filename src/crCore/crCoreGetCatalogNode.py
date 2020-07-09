@@ -1,6 +1,6 @@
 # My
 from crExceptionSal import *
-from crLogHeader import *
+from crLog import *
 
 # Receive a BeautifulSoup soup object,
 # then try to parse it to a recurse catalog node

@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
 # My
 from crBootstrap import *  # NOQA: E402
 from crBootstrapSal import *  # NOQA: E402
-from crLogHeader import *  # NOQA: E402
+from crLog import *  # NOQA: E402
 
 # These three variable are imported by crBootstrap
 # Then apply project dependent preprocessors by crBootstrapSal

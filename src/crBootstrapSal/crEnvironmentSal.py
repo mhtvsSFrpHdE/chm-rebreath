@@ -2,7 +2,7 @@
 from pathlib import Path as plPath  # Path
 
 # My
-from crEnvironment import *
+from crEnvironmentUtil import *
 
 # Module scope config
 magic_value_config_local = None
