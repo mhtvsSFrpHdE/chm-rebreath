@@ -5,12 +5,12 @@ from pathlib import Path as plPath
 from os import path as osPath
 
 # My
-from crLogHeader import *
-from crLocaleHeader import *
 from crEnvironmentHeader import *
-from crMagicValueHeader import *
-from crMessageHeader import *
-from crExceptionSal import *
+from crLog import *
+from crLocale import *
+from crMagicValuePreprocess import *
+from crMessagePreprocess import *
+from crException import *
 
 # Config object placeholder
 environment_config = configparser.RawConfigParser()
@@ -68,7 +68,7 @@ def _load_magic_value_config():
 # init_config
 
 
-def init_config():
+def _init_config():
     try:
         # Environment
         #
@@ -94,3 +94,8 @@ def init_config():
         # Not required yet
     except:
         raise
+
+# Run function
+
+
+_init_config()

@@ -1,3 +1,5 @@
+# Need to know the language a user using are
+
 import locale
 
 from os import path as osPath

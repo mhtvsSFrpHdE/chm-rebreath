@@ -1,3 +1,6 @@
+# Sometimes the variable is defined by the human world like the speed of light,
+# they are listed here
+
 # Add magic value preprocessor here if necessary
 
 
