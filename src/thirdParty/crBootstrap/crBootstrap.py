@@ -14,7 +14,7 @@ from crArgumentParser import *
 
 
 # Other modules
-from crConfigHeader import *  # NOQA: E402
+from crConfig import *  # NOQA: E402
 import crEnvironmentHeader as crEnvironment  # NOQA: E402
 
 
