@@ -20,15 +20,22 @@ def apply_config_preprocessor(environment_config, magic_value_config, message_co
 
     environment_config_local, magic_value_config_local, message_config_local = _crConfigSal.apply_config_preprocessor_sal(environment_config, magic_value_config, message_config)
 
-    # Use modified config to initialize other module
+    # Transfer modified config back to main level scope
+    return environment_config_local, magic_value_config_local, message_config_local
+
+# The method will use preprocessed config to initialize other module
+
+
+def init_any_other_module_require_config():
+    # Init basic module
     crEnvironmentSal.init_environment_sal(magic_value_config_local, message_config_local)
 
+    # crCore
     crCore.init_core_get_catalog_node(environment_config_local, message_config_local)
     crCore.init_core_get_index_html(environment_config_local, message_config_local)
 
+    # crOutput
     crOutput.init_output(environment_config_local, message_config_local)
 
+    # crUnpack
     crUnpack.init_crUnpack(environment_config_local)
-
-    # Transfer modified config back to main level scope
-    return environment_config_local, magic_value_config_local, message_config_local
