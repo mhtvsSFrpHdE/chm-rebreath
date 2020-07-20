@@ -5,27 +5,27 @@ from pathlib import Path as plPath  # Path
 from crEnvironmentUtil import *
 
 # Module scope config
-magic_value_config_local = None
-message_config_local = None
+_magic_value_config_local = None
+_message_config_local = None
 
 # Receive config
 
 
 def init_environment_sal(magic_value_config, message_config):
-    global magic_value_config_local
-    global message_config_local
+    global _magic_value_config_local
+    global _message_config_local
 
-    magic_value_config_local = magic_value_config
-    message_config_local = message_config
+    _magic_value_config_local = magic_value_config
+    _message_config_local = message_config
 
-    init_environment(message_config_local)
+    init_environment(_message_config_local)
 
 # Search in input folder and get catalog file path
 
 
 def get_catalog_chm_file_full_path():
-    global magic_value_config_local
-    global message_config_local
+    global _magic_value_config_local
+    global _message_config_local
 
     # Result placeholder
     catalog_file_full_path = None
@@ -34,7 +34,7 @@ def get_catalog_chm_file_full_path():
         # Glob all potential catalog file
         # Call it a list, but see python generator for more information
         catalog_file_list = plPath(crDevInput.unpackedChmFolder) \
-            .glob(magic_value_config_local['chm']['catalog_file_search_pattern'])
+            .glob(_magic_value_config_local['chm']['catalog_file_search_pattern'])
 
         # Expect only one catalog file
         catalog_file_list_count = 0
@@ -46,8 +46,8 @@ def get_catalog_chm_file_full_path():
 
             # Prevent more than one catalog file
             if catalog_file_list_count > 1:
-                crPrintCyan(message_config_local['err']['multiple_catalog_file'])
-                raise CrNotImplementedError(message_config_local['err']['multiple_catalog_file'])
+                crPrintCyan(_message_config_local['err']['multiple_catalog_file'])
+                raise CrNotImplementedError(_message_config_local['err']['multiple_catalog_file'])
 
             # Everything is fine, copy it as plPath
             catalog_file_full_path = plPath(catalog_file_glob_result)
@@ -55,7 +55,7 @@ def get_catalog_chm_file_full_path():
         # After explored the generator
         if catalog_file_list_count == 0:
             # Nothing found, raise error
-            error_message = message_config_local['err']['catalog_file_not_found']
+            error_message = _message_config_local['err']['catalog_file_not_found']
             crPrintCyan(error_message)
             raise CrFileNotFoundError(error_message)
     except:
@@ -83,15 +83,15 @@ def get_catalog_html_output_full_path(catalog_html_title):
     # Catalog root node name  + `- Catalog` + `.html`
     output_file_path = output_folder_path.joinpath(
         catalog_html_title
-        + message_config_local['html_catalog']['title']
-        + magic_value_config_local['html']['file_extension'])
+        + _message_config_local['html_catalog']['title']
+        + _magic_value_config_local['html']['file_extension'])
 
     return output_file_path
 
-# get_preprocessed_environment
+# apply_environment_config_preprocessor
 
 
-def get_preprocessed_environment(environment_config):
+def apply_environment_config_preprocessor(environment_config):
     # m = my
     mD = environment_config['data']
     mDC = environment_config['data_catalog_html_resource']
