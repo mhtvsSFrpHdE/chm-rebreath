@@ -17,7 +17,7 @@ from crLog import *  # NOQA: E402
 
 # These three variable are imported by crBootstrap
 # Then apply project dependent preprocessors by crBootstrapSal
-environment_config, magic_value_config, message_config = init_bootstrap_sal(environment_config, magic_value_config, message_config)
+environment_config, magic_value_config, message_config = apply_config_preprocessor(environment_config, magic_value_config, message_config)
 
 # Init module use config
 init_any_other_module_require_config()
