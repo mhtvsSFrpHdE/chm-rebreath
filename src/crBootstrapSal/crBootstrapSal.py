@@ -10,7 +10,7 @@ import crUnpack  # NOQA: E402
 def apply_config_preprocessor(environment_config, magic_value_config, message_config):
     # Create modified config
     myConfigGroup = environment_config, magic_value_config, message_config
-    environment_config_local, magic_value_config_local, message_config_local = _crConfigSal.init_config_sal(myConfigGroup, crEnvironmentSal)
+    environment_config_local, magic_value_config_local, message_config_local = _crConfigSal.apply_config_preprocessor_sal(environment_config, magic_value_config, message_config)
 
     # Use modified config to initialize other module
     crEnvironmentSal.init_environment_sal(magic_value_config_local, message_config_local)

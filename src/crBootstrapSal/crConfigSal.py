@@ -1,12 +1,17 @@
+import crEnvironmentSal as _crEnvironmentSal
 import crMagicValueSal as _crMagicValueSal
 
+# Add feature to crConfig but only for this specified project
+# they are not universal feature that suit any project
 
-# Use python tuple(array) for shorter function call
-# Transfer initialized SAL object as possible to prevent unnecessary double initialize
-def init_config_sal(config_tuple, crEnvironmentSal):
+
+def apply_config_preprocessor_sal(environment_config, magic_value_config, message_config):
+    # Init module
+    _crEnvironmentSal.init_environment_sal(magic_value_config, message_config)
 
     # Apply preprocessor
-    environment_config_local = crEnvironmentSal.apply_environment_config_preprocessor(config_tuple[0])
-    magic_value_config_local = _crMagicValueSal.apply_magic_value_config_preprocessor(config_tuple[1])
+    environment_config_local = _crEnvironmentSal.apply_environment_config_preprocessor(environment_config)
+    magic_value_config_local = _crMagicValueSal.apply_magic_value_config_preprocessor(magic_value_config)
 
-    return environment_config_local, magic_value_config_local, config_tuple[2]
+    # Return modified config and unmodified config
+    return environment_config_local, magic_value_config_local, message_config
