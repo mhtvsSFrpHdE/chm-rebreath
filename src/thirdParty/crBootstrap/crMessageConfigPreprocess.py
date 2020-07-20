@@ -21,10 +21,10 @@ def _preprocess_message_string(myString):
     # '&nl&' -> '\n'
     return myString.strip('"""').replace("&nl&", "\n")
 
-# get_preprocessed_message
+# apply_message_config_preprocessor
 
 
-def get_preprocessed_message(message_config):
+def apply_message_config_preprocessor(message_config):
 
     for group_name in message_config.sections():
         for key_name in message_config[group_name]:

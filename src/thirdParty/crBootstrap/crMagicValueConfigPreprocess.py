@@ -7,8 +7,8 @@
 def _required_preprocessor_name_in_future(magic_value_config):
     return magic_value_config
 
-# get_preprocessed_magic_value
+# apply_magic_value_config_preprocessor
 
 
-def get_preprocessed_magic_value(magic_value_config):
+def apply_magic_value_config_preprocessor(magic_value_config):
     return magic_value_config

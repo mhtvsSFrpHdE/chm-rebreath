@@ -7,8 +7,8 @@ from os import path as osPath
 # My
 from crLog import *
 from crLocale import *
-from crMagicValuePreprocess import *
-from crMessagePreprocess import *
+from crMagicValueConfigPreprocess import *
+from crMessageConfigPreprocess import *
 from crException import *
 
 # Config object placeholder
@@ -36,7 +36,7 @@ def _load_environment_config():
     environment_config = apply_locale_to_environment_config(environment_config)
 
     # Apply preprocessor(Not required yet)
-    #environment_config = get_preprocessed_environment(environment_config)
+    #environment_config = apply_environment_config_preprocessor(environment_config)
 
 
 def _load_message_config():
@@ -54,7 +54,7 @@ def _load_message_config():
     message_config.read(message_config_path, encoding='utf-8')
 
     # Apply preprocessor
-    message_config = get_preprocessed_message(message_config)
+    message_config = apply_message_config_preprocessor(message_config)
 
 
 def _load_magic_value_config():
@@ -73,7 +73,7 @@ def _load_magic_value_config():
     magic_value_config.read(magic_value_config_path)
 
     # Apply preprocessor(Not required yet)
-    #magic_value_config = get_preprocessed_magic_value(magic_value_config)
+    #magic_value_config = apply_magic_value_config_preprocessor(magic_value_config)
 
 
 # init_config

@@ -6,8 +6,8 @@
 def _required_preprocessor_name_in_future(environment_config):
     return environment_config
 
-# get_preprocessed_environment
+# apply_environment_config_preprocessor
 
 
-def get_preprocessed_environment(environment_config):
+def apply_environment_config_preprocessor(environment_config):
     return environment_config
