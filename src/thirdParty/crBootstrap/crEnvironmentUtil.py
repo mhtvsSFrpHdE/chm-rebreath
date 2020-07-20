@@ -35,4 +35,4 @@ def crCreateFolder(myFolder):
             raise CrEnvironmentError(error_message)
     # else if myFolder already exist
     else:
-        folder_exist = True # TODO: What's this? Undocumented behavior
+        folder_exist = True # TODO: Undocumented behavior, should we actually ignore the folder exist problem?
