@@ -2,7 +2,7 @@
 import crConfigSal as _crConfigSal  # NOQA: E402
 import crCore  # NOQA: E402
 import crEnvironmentSal  # NOQA: E402
-import crOutputHeader as crOutput  # NOQA: E402
+import crOutput  # NOQA: E402
 import crUnpack  # NOQA: E402
 
 # 3rd
