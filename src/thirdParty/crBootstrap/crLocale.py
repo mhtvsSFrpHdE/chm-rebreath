@@ -1,9 +1,9 @@
 # Need to know the language a user using are
 
-import locale
+import locale as _locale
 
-from os import path as osPath
-from pathlib import Path as plPath
+from os import path as _osPath
+from pathlib import Path as _plPath
 
 # Shortcut to getdefaultlocale()[0]
 # Expected result: "en_US"
@@ -11,7 +11,7 @@ from pathlib import Path as plPath
 
 def get_system_language():
 
-    return locale.getdefaultlocale()[0]
+    return _locale.getdefaultlocale()[0]
 
 # Preprocess config
 # the config should not change by code after preprocess
@@ -25,7 +25,7 @@ def _my_locale_parser(config_environment):
 
     # Confirm the language files are exists.
     # If not, use default fallback language
-    current_language_exists = osPath.exists(plPath(current_language))
+    current_language_exists = _osPath.exists(_plPath(current_language))
     if current_language_exists is False:
         current_language = config_environment['language']['fallback_path']
 

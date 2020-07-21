@@ -1,8 +1,8 @@
 # 3rd
-import os
+import os as _os
 
-from pathlib import Path as plPath  # Path
-from os import path as osPath
+from pathlib import Path as _plPath  # Path
+from os import path as _osPath
 
 # My
 from crExceptionSal import *
@@ -25,9 +25,9 @@ def init_environment(message_config):
 
 def crCreateFolder(myFolder):
     folder_exist = False
-    if osPath.exists(myFolder) is False:
+    if _osPath.exists(myFolder) is False:
         try:
-            os.mkdir(myFolder)
+            _os.mkdir(myFolder)
             folder_exist = True
         except:
             error_message = message_config_local['err']['failed_to_create_output_folder']
