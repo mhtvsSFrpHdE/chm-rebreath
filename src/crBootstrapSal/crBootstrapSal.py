@@ -1,6 +1,6 @@
 # Load project modules
 import crConfigSal as _crConfigSal  # NOQA: E402
-import crCoreHeader as crCore  # NOQA: E402
+import crCore  # NOQA: E402
 import crEnvironmentSal  # NOQA: E402
 import crOutputHeader as crOutput  # NOQA: E402
 import crUnpack  # NOQA: E402
