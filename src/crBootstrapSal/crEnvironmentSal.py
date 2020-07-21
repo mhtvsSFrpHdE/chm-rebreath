@@ -1,8 +1,8 @@
 # 3rd
-from pathlib import Path as plPath  # Path
+from pathlib import Path as _plPath  # Path
 
 # My
-from crEnvironmentUtil import *
+import crEnvironmentUtil as _crEnvironmentUtil
 
 # Module scope config
 _magic_value_config_local = None
@@ -18,7 +18,7 @@ def init_environment_sal(magic_value_config, message_config):
     _magic_value_config_local = magic_value_config
     _message_config_local = message_config
 
-    init_environment(_message_config_local)
+    _crEnvironmentUtil.init_environment(_message_config_local)
 
 # Search in input folder and get catalog file path
 
@@ -33,7 +33,7 @@ def get_catalog_chm_file_full_path():
     try:
         # Glob all potential catalog file
         # Call it a list, but see python generator for more information
-        catalog_file_list = plPath(crDevInput.unpackedChmFolder) \
+        catalog_file_list = _plPath(crDevInput.unpackedChmFolder) \
             .glob(_magic_value_config_local['chm']['catalog_file_search_pattern'])
 
         # Expect only one catalog file
@@ -50,7 +50,7 @@ def get_catalog_chm_file_full_path():
                 raise CrNotImplementedError(_message_config_local['err']['multiple_catalog_file'])
 
             # Everything is fine, copy it as plPath
-            catalog_file_full_path = plPath(catalog_file_glob_result)
+            catalog_file_full_path = _plPath(catalog_file_glob_result)
 
         # After explored the generator
         if catalog_file_list_count == 0:
@@ -67,9 +67,9 @@ def get_catalog_chm_file_full_path():
 
 
 def get_root_output_folder_full_path():
-    output_folder = plPath(crDevInput.outputFolder)
+    output_folder = _plPath(_crEnvironmentUtil.crDevInput.outputFolder)
 
-    crCreateFolder(output_folder)
+    _crEnvironmentUtil.crCreateFolder(output_folder)
 
     return output_folder
 
