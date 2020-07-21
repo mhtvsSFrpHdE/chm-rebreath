@@ -11,16 +11,8 @@ sys.path.append('./src/crUnpack')
 from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
 
 # My
-from crBootstrap import *  # NOQA: E402
 from crBootstrapSal import *  # NOQA: E402
 from crLog import *  # NOQA: E402
-
-# These three variable are imported by crBootstrap
-# Then apply project dependent preprocessors by crBootstrapSal
-environment_config, magic_value_config, message_config = apply_config_preprocessor(environment_config, magic_value_config, message_config)
-
-# Init module use config
-init_any_other_module_require_config()
 
 # All returned path musb be pathlib path
 
