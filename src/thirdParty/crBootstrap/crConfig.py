@@ -13,15 +13,15 @@ import crException as _crException
 
 # Config object placeholder
 # The three are designed to be public
-environment_config = _configparser.RawConfigParser()
-magic_value_config = _configparser.RawConfigParser()
-message_config = _configparser.RawConfigParser()
+_environment_config = _configparser.RawConfigParser()
+_magic_value_config = _configparser.RawConfigParser()
+_message_config = _configparser.RawConfigParser()
 
 # Read config files
 
 
 def _load_environment_config():
-    global environment_config
+    global _environment_config
 
     environment_config_path = _plPath('environment.ini')
 
@@ -31,19 +31,19 @@ def _load_environment_config():
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    environment_config.read(environment_config_path)
+    _environment_config.read(environment_config_path)
 
     # Apply locale
-    environment_config = _crLocale.apply_locale_to_environment_config(environment_config)
+    _environment_config = _crLocale.apply_locale_to_environment_config(_environment_config)
 
     # Apply preprocessor(Not required yet)
 
 
 def _load_message_config():
-    global message_config
+    global _message_config
 
     message_config_path = _plPath(
-        environment_config['message']['config_message_path'])
+        _environment_config['message']['config_message_path'])
 
     if _osPath.exists(message_config_path) is False:
         # Message config not yet loaded
@@ -51,28 +51,34 @@ def _load_message_config():
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    message_config.read(message_config_path, encoding='utf-8')
+    _message_config.read(message_config_path, encoding='utf-8')
 
     # Apply preprocessor
-    message_config = _crMessageConfigPreprocess.apply_message_config_preprocessor(message_config)
+    _message_config = _crMessageConfigPreprocess.apply_message_config_preprocessor(_message_config)
 
 
 def _load_magic_value_config():
-    global magic_value_config
-    global message_config
+    global _magic_value_config
+    global _message_config
 
     magic_value_config_path = _plPath(
-        environment_config['dev']['magic_value_config_path'])
+        _environment_config['dev']['magic_value_config_path'])
 
     if _osPath.exists(magic_value_config_path) is False:
-        error_message = message_config['err']['software_broken'] \
+        error_message = _message_config['err']['software_broken'] \
             + str(magic_value_config_path)
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    magic_value_config.read(magic_value_config_path)
+    _magic_value_config.read(magic_value_config_path)
 
     # Apply preprocessor(Not required yet)
+
+# Transfer config back
+
+
+def get_config():
+    return _environment_config, _magic_value_config, _message_config
 
 
 # init_config
