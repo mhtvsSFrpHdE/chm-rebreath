@@ -44,3 +44,6 @@ def _init_any_other_module_requires_config():
 # Then use preprocessed config to initialize other module
 _apply_config_preprocessor()
 _init_any_other_module_requires_config()
+
+# Prepare command line arguments
+import crArgumentSal as crArgument  # NOQA: E402
