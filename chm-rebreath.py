@@ -9,6 +9,7 @@ sys.path.append('./src/crUnpack')
 
 # 3rd
 from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
+import logging  # NOQA: E402
 
 # My
 from crBootstrapSal import *  # NOQA: E402

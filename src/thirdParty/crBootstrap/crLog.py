@@ -2,7 +2,6 @@
 # for example actually color print is a part of user interact
 
 # 3rd
-import logging
 import colors as _colors  # Console colors
 
 # Print something fast in cyan
