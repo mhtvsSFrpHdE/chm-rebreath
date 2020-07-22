@@ -46,6 +46,7 @@ def main():
 # }
 
 # main()
+crInput.get_runtime_input(crArgument.commandline_arguments)
 crUnpack.unpack_chm_file()
 
 # If any error occurred during execute

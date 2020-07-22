@@ -47,3 +47,4 @@ _init_any_other_module_requires_config()
 
 # Prepare command line arguments
 import crArgumentSal as crArgument  # NOQA: E402
+import crInputSal as crInput
