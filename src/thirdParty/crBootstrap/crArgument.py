@@ -1,5 +1,5 @@
-import argparse as argparse
-argument_parser = argparse.ArgumentParser()
+import argparse as _argparse
+argument_parser = _argparse.ArgumentParser()
 
 # Simply read command line arguments
 # These are code example and common arguments
