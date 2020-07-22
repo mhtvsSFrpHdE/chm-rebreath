@@ -1,6 +1,6 @@
 from crArgument import *
 
-# Read command line arguments
+# Add project specified command line arguments
 
 
 def _my_arg_parser():
