@@ -7,6 +7,10 @@ def _my_arg_parser():
     # Set required arguments
     global argument_parser
 
+    # Use config file to fill arguments
+    argument_parser.add_argument("-c", "--configFile",
+                                help="Ignore any other argument and use config to fill runtime input")
+
     # Input folder(where chm file already extracted)
     argument_parser.add_argument("-i", "--inputFolder",
                                  help="Input folder(where chm file already extracted)")
