@@ -20,6 +20,13 @@ def _my_arg_parser():
 
     # TODO: Add more arguments
 
+# Request parse arguments
+# If failed to get arguments, software will do nothing and exit
+# If no arguments are given, software should print version information,
+# but till now the software were uncompleted.
+
+
+def _request_arguments_parse():
     myArgs = None
     # Collect arguments
     try:
@@ -30,5 +37,8 @@ def _my_arg_parser():
     return myArgs
 
 
+# Run code
+_my_arg_parser()
+
 # Export argument for later use
-commandline_arguments = _my_arg_parser()
+commandline_arguments = _request_arguments_parse()
