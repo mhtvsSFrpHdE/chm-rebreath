@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
 
 # My
 from crBootstrapSal import *  # NOQA: E402
-from crLog import *  # NOQA: E402
+import crLog  # NOQA: E402
 
 # All returned path musb be pathlib path
 

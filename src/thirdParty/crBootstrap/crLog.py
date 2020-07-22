@@ -3,10 +3,10 @@
 
 # 3rd
 import logging
-import colors  # Console colors
+import colors as _colors  # Console colors
 
 # Print something fast in cyan
 
 
 def crPrintCyan(myText):
-    print(colors.cyan(myText))
+    print(_colors.cyan(myText))

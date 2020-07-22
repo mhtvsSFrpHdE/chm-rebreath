@@ -1,6 +1,6 @@
 # My
-from crExceptionSal import *
-from crLog import *
+import crExceptionSal as _crException
+import crLog as _crLog
 
 # Receive a BeautifulSoup soup object,
 # then try to parse it to a recurse catalog node
@@ -8,8 +8,8 @@ from crLog import *
 # Read these code from bottom to top is suggested
 #
 # # Module scope config
-environment_config_local = None
-message_config_local = None
+_environment_config_local = None
+_message_config_local = None
 
 # Define structure of chm catalog
 # Chm catalog divided into two status, have sub-node or not
@@ -43,7 +43,7 @@ class CrChmCatalogNode():
             if child['name'] == "Name":
                 self.catalog_name = child['value']
             elif child['name'] == "Local":
-                self.content_url = environment_config_local['output_chm_content']['root_path'] + child['value']
+                self.content_url = _environment_config_local['output_chm_content']['root_path'] + child['value']
                 self.have_content_url = True
 
 
@@ -71,22 +71,22 @@ def _process_catalog_sub_node(catalog_node, sub_node_list):
 
 
 def _raise_catalog_object_tag_not_fount():
-    error_message = message_config_local['err']['catalog_object_tag_not_fount']
+    error_message = _message_config_local['err']['catalog_object_tag_not_fount']
 
-    crPrintCyan(error_message)
+    _crLog.crPrintCyan(error_message)
 
-    raise CrObjectTagNotFoundInCatalogChmError(error_message)
+    raise _crException.CrObjectTagNotFoundInCatalogChmError(error_message)
 
 # Raise error about multiple sub node ul
 
 
 def _raise_catalog_multiple_sub_node_ul(sub_node_list):
-    error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
+    error_message = _message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
         + str(sub_node_list)
 
-    crPrintCyan(error_message)
+    _crLog.crPrintCyan(error_message)
 
-    raise CrNotImplementedError(error_message)
+    raise _crException.CrNotImplementedError(error_message)
 
 
 # Recurse scan li tag that contains catalog node, find object tag or other ul tags
@@ -178,10 +178,10 @@ def _process_my_soup(mySoup):
 
         ulCount = ulCount + 1
         if ulCount > 1:
-            error_message = message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
+            error_message = _message_config_local['err']['chm_catalog_multiple_sub_node_ul'] \
                 + str(child)
-            crPrintCyan(error_message)
-            raise CrNotImplementedError(error_message)
+            _crLog.crPrintCyan(error_message)
+            raise _crException.CrNotImplementedError(error_message)
         else:
             # Process ul tag found
             catalog_node = _process_catalog_ul(child)
@@ -204,8 +204,8 @@ def get_catalog_node(mySoup):
 
 
 def init_core_get_catalog_node(environment_config, message_config):
-    global environment_config_local
-    global message_config_local
+    global _environment_config_local
+    global _message_config_local
 
-    environment_config_local = environment_config
-    message_config_local = message_config
+    _environment_config_local = environment_config
+    _message_config_local = message_config

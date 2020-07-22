@@ -2,9 +2,9 @@
 from yattag import Doc  # Generate HTML
 
 # My
-from crLog import *
-from crLocale import *
-from crCoreGetCatalogHtml import process_catalog_node
+import crLog as _crLog
+import crLocale as _crLocale
+import crCoreGetCatalogHtml as _crCoreGetCatalogHtml
 
 # Module scope config
 environment_config_local = None
@@ -26,7 +26,7 @@ message_config_local = None
 
 
 def _get_html_language():
-    return get_system_language().replace('_', '-')
+    return _crLocale.get_system_language().replace('_', '-')
 
 
 # Fill information into the standard HTML document structure
@@ -95,7 +95,7 @@ def get_index_html_text(catalog_node):
                 # Root unordered list
                 with tag("div", klass="catalog"):
                     with tag("ul", klass="catalog_node_list root"):
-                        process_catalog_node(catalog_node, doc, tag, text)
+                        _crCoreGetCatalogHtml.process_catalog_node(catalog_node, doc, tag, text)
 
             # Content area
             with tag("div", klass="content"):
