@@ -1,3 +1,7 @@
+# After apply config preprocessor, there is no need to use method in this file again
+# `import crConfigSal as _crConfig` as private is recommended
+
+# Get preprocessor
 import crEnvironmentSal as _crEnvironmentSal
 import crMagicValueSal as _crMagicValueSal
 
