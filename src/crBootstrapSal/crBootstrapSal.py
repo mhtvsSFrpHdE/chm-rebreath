@@ -45,6 +45,6 @@ def _init_any_other_module_requires_config():
 _apply_config_preprocessor()
 _init_any_other_module_requires_config()
 
-# Prepare command line arguments
+# After infrastructure loaded, prepare command line arguments
 import crArgumentSal as crArgument  # NOQA: E402
-import crInputSal as crInput
+import crInputSal as crInput  # NOQA: E402
