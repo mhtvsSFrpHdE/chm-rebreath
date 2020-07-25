@@ -3,10 +3,10 @@
 
 # Prepare logging at the very beginning
 # We do not dealing with external error, just print and crash
-import logging as _logging  # NOQA: E402
+import crLog  # NOQA: E402
 
-_logging.basicConfig(filename="log.txt", level=_logging.INFO)  # NOQA: E402
-_logging.info("#========= Start =========#")  # NOQA: E402
+crLog.logging.basicConfig(filename="log.txt", level=crLog.logging.INFO)  # NOQA: E402
+crLog.logging.info("#========= Start =========#")  # NOQA: E402
 
 # Load config
 from crConfig import *  # NOQA: E402

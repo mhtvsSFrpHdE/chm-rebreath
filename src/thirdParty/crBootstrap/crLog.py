@@ -3,6 +3,7 @@
 
 # 3rd
 import colors as _colors  # Console colors
+import logging  # NOQA: E402
 
 # Print something fast in cyan
 

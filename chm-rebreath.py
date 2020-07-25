@@ -9,11 +9,9 @@ sys.path.append('./src/crUnpack')
 
 # 3rd
 from bs4 import BeautifulSoup  # NOQA: E402 HTML parsing
-import logging  # NOQA: E402
 
 # My
 from crBootstrapSal import *  # NOQA: E402
-import crLog  # NOQA: E402
 
 # All returned path musb be pathlib path
 
@@ -52,4 +50,4 @@ crUnpack.unpack_chm_file()
 # If any error occurred during execute
 # This statements is false
 # (Will not add to log file)
-logging.info("#========= End properly after main() =#")  # NOQA: E402
+crLog.logging.info("#========= End properly after main() =#")  # NOQA: E402

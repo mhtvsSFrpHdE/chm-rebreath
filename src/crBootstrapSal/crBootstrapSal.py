@@ -2,7 +2,6 @@
 import crConfigSal as _crConfig  # NOQA: E402
 import crCore  # NOQA: E402
 import crEnvironmentSal as crEnvironment  # NOQA: E402
-import crGlobalVariable  # NOQA: E402
 import crOutput  # NOQA: E402
 import crUnpack  # NOQA: E402
 
