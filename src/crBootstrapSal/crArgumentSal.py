@@ -9,14 +9,14 @@ def _my_arg_parser():
 
     # Use config file to fill arguments
     argument_parser.add_argument("-c", "--configFile",
-                                help="Ignore any other argument and use config to fill runtime input")
+                                 help="Ignore any other argument and use config to fill runtime input")
 
     # Input chm(use unpack module)
     argument_parser.add_argument("-ic", "--inputChm",
                                  help="Input chm file, will try to unpack automatically if possible")
 
     # Input folder(where chm file already extracted)
-    argument_parser.add_argument("-i", "--inputFolder",
+    argument_parser.add_argument("-if", "--inputFolder",
                                  help="Input folder(where chm file already extracted)")
     # Output folder
     argument_parser.add_argument("-o", "--outputFolder",
