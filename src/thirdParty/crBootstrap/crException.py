@@ -19,3 +19,6 @@ class CrNotImplementedError(CrBaseError):
 
 class CrEnvironmentError(CrBaseError):
     pass
+
+class CrRunArgumentError(CrBaseError):
+    pass
