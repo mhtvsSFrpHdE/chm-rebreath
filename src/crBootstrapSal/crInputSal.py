@@ -1,7 +1,7 @@
 # Read any potential input from user or runtime config
 # To confirm what's the purpose of this startup
 
-import crLog as _crLog
+import crGlobalLevel as _crGlobalLevel
 
 
 # TODO: If there is any boolean argument can override others, they go here
