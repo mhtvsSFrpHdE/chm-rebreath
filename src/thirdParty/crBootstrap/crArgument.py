@@ -12,6 +12,7 @@ def _python_arg_parser():
 
     # Version
     argument_parser.add_argument("--version",
+                                 action="store_true",
                                  help="Show build number or other version information")
 
 
