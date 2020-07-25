@@ -9,5 +9,4 @@ _logging.basicConfig(filename="log.txt", level=_logging.INFO)  # NOQA: E402
 _logging.info("#========= Start =========#")  # NOQA: E402
 
 # Load config
-import crConfig as _crConfig  # NOQA: E402
-environment_config, magic_value_config, message_config = _crConfig.get_config()
+from crConfig import *  # NOQA: E402

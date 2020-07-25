@@ -2,6 +2,7 @@
 import crConfigSal as _crConfig  # NOQA: E402
 import crCore  # NOQA: E402
 import crEnvironmentSal as crEnvironment  # NOQA: E402
+import crGlobalVariable  # NOQA: E402
 import crOutput  # NOQA: E402
 import crUnpack  # NOQA: E402
 
@@ -13,29 +14,24 @@ from crBootstrap import *  # NOQA: E402
 
 
 def _apply_config_preprocessor():
-    # Get access to root level config
-    global environment_config
-    global magic_value_config
-    global message_config
-
-    environment_config, magic_value_config, message_config = _crConfig.apply_config_preprocessor_sal(environment_config, magic_value_config, message_config)
+    _crConfig.apply_config_preprocessor_sal()
 
 # The method will use preprocessed config to initialize other module
 
 
 def _init_any_other_module_requires_config():
     # Init basic module
-    crEnvironment.init_environment_sal(magic_value_config, message_config)
+    crEnvironment.init_environment_sal(crGlobalVariable.magic_value_config, crGlobalVariable.message_config)
 
     # crCore
-    crCore.init_core_get_catalog_node(environment_config, message_config)
-    crCore.init_core_get_index_html(environment_config, message_config)
+    crCore.init_core_get_catalog_node(crGlobalVariable.environment_config, crGlobalVariable.message_config)
+    crCore.init_core_get_index_html(crGlobalVariable.environment_config, crGlobalVariable.message_config)
 
     # crOutput
-    crOutput.init_output(environment_config, message_config)
+    crOutput.init_output(crGlobalVariable.environment_config, crGlobalVariable.message_config)
 
     # crUnpack
-    crUnpack.init_crUnpack(environment_config)
+    crUnpack.init_crUnpack(crGlobalVariable.environment_config)
 
 
 # Run method

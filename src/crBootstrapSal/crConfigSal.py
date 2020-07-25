@@ -1,6 +1,9 @@
 # After apply config preprocessor, there is no need to use method in this file again
 # `import crConfigSal as _crConfig` as private is recommended
 
+# My
+import crGlobalVariable as _crGlobalVariable
+
 # Get preprocessor
 import crEnvironmentSal as _crEnvironmentSal
 import crMagicValueSal as _crMagicValueSal
@@ -9,13 +12,14 @@ import crMagicValueSal as _crMagicValueSal
 # they are not universal feature that suit any project
 
 
-def apply_config_preprocessor_sal(environment_config, magic_value_config, message_config):
+def apply_config_preprocessor_sal():
     # Init module
-    _crEnvironmentSal.init_environment_sal(magic_value_config, message_config)
+    _crEnvironmentSal.init_environment_sal(_crGlobalVariable.magic_value_config, _crGlobalVariable.message_config)
 
     # Apply preprocessor
-    environment_config_local = _crEnvironmentSal.apply_environment_config_preprocessor(environment_config)
-    magic_value_config_local = _crMagicValueSal.apply_magic_value_config_preprocessor(magic_value_config)
+    environment_config_local = _crEnvironmentSal.apply_environment_config_preprocessor(_crGlobalVariable.environment_config)
+    magic_value_config_local = _crMagicValueSal.apply_magic_value_config_preprocessor(_crGlobalVariable.magic_value_config)
 
-    # Return modified config and unmodified config
-    return environment_config_local, magic_value_config_local, message_config
+    # Transfer back modified config
+    _crGlobalVariable.environment_config = environment_config_local
+    _crGlobalVariable.magic_value_config = magic_value_config_local
