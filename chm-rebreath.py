@@ -25,16 +25,16 @@ def main():
     catalog_node = None
 
     # Open
-    with open(crEnvironmentSal.get_catalog_chm_file_full_path(), "rb") as chm_catalog_file:
+    with open(crEnvironment.get_catalog_chm_file_full_path(), "rb") as chm_catalog_file:
         mySoup = BeautifulSoup(chm_catalog_file, "html5lib")
         catalog_node = crCore.get_catalog_node(mySoup)
 
     # TODO: Test purpose code, move to other place later
     catalog_html_text = crCore.get_index_html_text(catalog_node)
-    root_output_folder_full_path = crEnvironmentSal.get_root_output_folder_full_path()
+    root_output_folder_full_path = crEnvironment.get_root_output_folder_full_path()
     crOutput.create_output_folder_structure(root_output_folder_full_path)
 
-    catalog_html_output_full_path = crEnvironmentSal.get_catalog_html_output_full_path(catalog_node.catalog_name)
+    catalog_html_output_full_path = crEnvironment.get_catalog_html_output_full_path(catalog_node.catalog_name)
     catalog_html_resource_output_full_path = crOutput.get_catalog_html_resource_output_full_path(root_output_folder_full_path)
 
     with open(catalog_html_output_full_path, "w+", encoding="utf-8") as catalog_html_file:
