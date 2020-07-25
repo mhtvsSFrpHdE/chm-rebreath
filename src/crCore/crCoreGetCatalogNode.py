@@ -1,6 +1,6 @@
 # My
 import crExceptionSal as _crException
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 import crLog as _crLog
 
 # Receive a BeautifulSoup soup object,
@@ -208,5 +208,5 @@ def init_core_get_catalog_node():
     global _environment_config_local
     global _message_config_local
 
-    _environment_config_local = _crGlobalVariable.environment_config
-    _message_config_local = _crGlobalVariable.message_config
+    _environment_config_local = _crGlobalLevel.environment_config
+    _message_config_local = _crGlobalLevel.message_config

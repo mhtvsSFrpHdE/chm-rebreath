@@ -1,5 +1,5 @@
 import cstpw as _cstpw
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 
 # Module scope config
 _environment_config_local = None
@@ -7,7 +7,7 @@ _environment_config_local = None
 # Receive config
 def init_crUnpack():
     global _environment_config_local
-    _environment_config_local = _crGlobalVariable.environment_config
+    _environment_config_local = _crGlobalLevel.environment_config
 
     script_file_name = _environment_config_local['cstpw']['script_file_name']
 

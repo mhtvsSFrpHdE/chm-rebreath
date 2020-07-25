@@ -10,13 +10,13 @@ import crLocale as _crLocale
 import crMagicValueConfigPreprocess as _crMagicValueConfigPreprocess
 import crMessageConfigPreprocess as _crMessageConfigPreprocess
 import crException as _crException
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 
 # Config object placeholder
 # The three are designed to be public
-_crGlobalVariable.environment_config = _configparser.RawConfigParser()
-_crGlobalVariable.magic_value_config = _configparser.RawConfigParser()
-_crGlobalVariable.message_config = _configparser.RawConfigParser()
+_crGlobalLevel.environment_config = _configparser.RawConfigParser()
+_crGlobalLevel.magic_value_config = _configparser.RawConfigParser()
+_crGlobalLevel.message_config = _configparser.RawConfigParser()
 
 # Read config files
 
@@ -30,17 +30,17 @@ def _load_environment_config():
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    _crGlobalVariable.environment_config.read(environment_config_path)
+    _crGlobalLevel.environment_config.read(environment_config_path)
 
     # Apply locale
-    _crGlobalVariable.environment_config = _crLocale.apply_locale_to_environment_config(_crGlobalVariable.environment_config)
+    _crGlobalLevel.environment_config = _crLocale.apply_locale_to_environment_config(_crGlobalLevel.environment_config)
 
     # Apply preprocessor(Not required yet)
 
 
 def _load_message_config():
     message_config_path = _plPath(
-        _crGlobalVariable.environment_config['message']['config_message_path'])
+        _crGlobalLevel.environment_config['message']['config_message_path'])
 
     if _osPath.exists(message_config_path) is False:
         # Message config not yet loaded
@@ -48,23 +48,23 @@ def _load_message_config():
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    _crGlobalVariable.message_config.read(message_config_path, encoding='utf-8')
+    _crGlobalLevel.message_config.read(message_config_path, encoding='utf-8')
 
     # Apply preprocessor
-    _crGlobalVariable.message_config = _crMessageConfigPreprocess.apply_message_config_preprocessor(_crGlobalVariable.message_config)
+    _crGlobalLevel.message_config = _crMessageConfigPreprocess.apply_message_config_preprocessor(_crGlobalLevel.message_config)
 
 
 def _load_magic_value_config():
     magic_value_config_path = _plPath(
-        _crGlobalVariable.environment_config['dev']['magic_value_config_path'])
+        _crGlobalLevel.environment_config['dev']['magic_value_config_path'])
 
     if _osPath.exists(magic_value_config_path) is False:
-        error_message = _crGlobalVariable.message_config['err']['software_broken'] \
+        error_message = _crGlobalLevel.message_config['err']['software_broken'] \
             + str(magic_value_config_path)
         _crLog.crPrintCyan(error_message)
         raise _crException.CrFileNotFoundError(error_message)
 
-    _crGlobalVariable.magic_value_config.read(magic_value_config_path)
+    _crGlobalLevel.magic_value_config.read(magic_value_config_path)
 
     # Apply preprocessor(Not required yet)
 

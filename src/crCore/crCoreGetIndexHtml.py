@@ -2,7 +2,7 @@
 from yattag import Doc  # Generate HTML
 
 # My
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 import crLog as _crLog
 import crLocale as _crLocale
 import crCoreGetCatalogHtml as _crCoreGetCatalogHtml
@@ -112,5 +112,5 @@ def init_core_get_index_html():
     global environment_config_local
     global message_config_local
 
-    message_config_local = _crGlobalVariable.message_config
-    environment_config_local = _crGlobalVariable.environment_config
+    message_config_local = _crGlobalLevel.message_config
+    environment_config_local = _crGlobalLevel.environment_config

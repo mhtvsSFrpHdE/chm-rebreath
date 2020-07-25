@@ -1,7 +1,7 @@
 from pathlib import Path as _plPath
 from shutil import copytree as _copytree
 
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 import crLog as _crLog
 from crEnvironmentUtil import crCreateFolder as _crCreateFolder
 
@@ -35,5 +35,5 @@ def init_output():
     global _environment_config_local
     global _message_config_local
 
-    _environment_config_local = _crGlobalVariable.environment_config
-    _message_config_local = _crGlobalVariable.message_config
+    _environment_config_local = _crGlobalLevel.environment_config
+    _message_config_local = _crGlobalLevel.message_config

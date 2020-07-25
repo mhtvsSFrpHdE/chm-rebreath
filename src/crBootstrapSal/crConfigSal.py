@@ -2,7 +2,7 @@
 # `import crConfigSal as _crConfig` as private is recommended
 
 # My
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 
 # Get preprocessor
 import crEnvironmentSal as _crEnvironmentSal

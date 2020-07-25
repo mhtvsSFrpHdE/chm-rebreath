@@ -1,4 +1,4 @@
-import crGlobalVariable as _crGlobalVariable
+import crGlobalLevel as _crGlobalLevel
 
 def _preprocess_chm_file_search_pattern(magic_value_config):
     # m = my
@@ -15,4 +15,4 @@ def _preprocess_chm_file_search_pattern(magic_value_config):
 
 
 def apply_magic_value_config_preprocessor():
-    return _preprocess_chm_file_search_pattern(_crGlobalVariable.magic_value_config)
+    return _preprocess_chm_file_search_pattern(_crGlobalLevel.magic_value_config)
