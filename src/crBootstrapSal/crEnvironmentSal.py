@@ -3,6 +3,7 @@ from pathlib import Path as _plPath  # Path
 
 # My
 import crEnvironmentUtil as _crEnvironmentUtil
+import crGlobalVariable as _crGlobalVariable
 
 # Module scope config
 _magic_value_config_local = None
@@ -11,12 +12,12 @@ _message_config_local = None
 # Receive config
 
 
-def init_environment_sal(magic_value_config, message_config):
+def init_environment_sal():
     global _magic_value_config_local
     global _message_config_local
 
-    _magic_value_config_local = magic_value_config
-    _message_config_local = message_config
+    _magic_value_config_local = _crGlobalVariable.magic_value_config
+    _message_config_local = _crGlobalVariable.message_config
 
     _crEnvironmentUtil.init_environment(_message_config_local)
 
@@ -91,16 +92,14 @@ def get_catalog_html_output_full_path(catalog_html_title):
 # apply_environment_config_preprocessor
 
 
-def apply_environment_config_preprocessor(environment_config):
+def apply_environment_config_preprocessor():
     # m = my
-    mD = environment_config['data']
-    mDC = environment_config['data_catalog_html_resource']
+    mD = _crGlobalVariable.environment_config['data']
+    mDC = _crGlobalVariable.environment_config['data_catalog_html_resource']
 
     # Copy data structure to output structure
     # Do this before preprocess data
-    environment_config['output_catalog_html_resource'] = mDC
+    _crGlobalVariable.environment_config['output_catalog_html_resource'] = mDC
 
     # Generate full path for data_catalog folder
-    environment_config['data_catalog_html_resource']['root_full_path'] = mD['root_path'] + mDC['root_path']
-
-    return environment_config
+    _crGlobalVariable.environment_config['data_catalog_html_resource']['root_full_path'] = mD['root_path'] + mDC['root_path']

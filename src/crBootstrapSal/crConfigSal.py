@@ -14,12 +14,8 @@ import crMagicValueSal as _crMagicValueSal
 
 def apply_config_preprocessor_sal():
     # Init module
-    _crEnvironmentSal.init_environment_sal(_crGlobalVariable.magic_value_config, _crGlobalVariable.message_config)
+    _crEnvironmentSal.init_environment_sal()
 
     # Apply preprocessor
-    environment_config_local = _crEnvironmentSal.apply_environment_config_preprocessor(_crGlobalVariable.environment_config)
-    magic_value_config_local = _crMagicValueSal.apply_magic_value_config_preprocessor(_crGlobalVariable.magic_value_config)
-
-    # Transfer back modified config
-    _crGlobalVariable.environment_config = environment_config_local
-    _crGlobalVariable.magic_value_config = magic_value_config_local
+    _crEnvironmentSal.apply_environment_config_preprocessor()
+    _crMagicValueSal.apply_magic_value_config_preprocessor()

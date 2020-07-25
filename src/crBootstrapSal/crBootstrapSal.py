@@ -21,17 +21,17 @@ def _apply_config_preprocessor():
 
 def _init_any_other_module_requires_config():
     # Init basic module
-    crEnvironment.init_environment_sal(crGlobalVariable.magic_value_config, crGlobalVariable.message_config)
+    crEnvironment.init_environment_sal()
 
     # crCore
-    crCore.init_core_get_catalog_node(crGlobalVariable.environment_config, crGlobalVariable.message_config)
-    crCore.init_core_get_index_html(crGlobalVariable.environment_config, crGlobalVariable.message_config)
+    crCore.init_core_get_catalog_node()
+    crCore.init_core_get_index_html()
 
     # crOutput
-    crOutput.init_output(crGlobalVariable.environment_config, crGlobalVariable.message_config)
+    crOutput.init_output()
 
     # crUnpack
-    crUnpack.init_crUnpack(crGlobalVariable.environment_config)
+    crUnpack.init_crUnpack()
 
 
 # Run method

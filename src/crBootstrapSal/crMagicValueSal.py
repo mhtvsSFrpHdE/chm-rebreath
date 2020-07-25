@@ -1,3 +1,5 @@
+import crGlobalVariable as _crGlobalVariable
+
 def _preprocess_chm_file_search_pattern(magic_value_config):
     # m = my
     mChm = magic_value_config['chm']
@@ -12,5 +14,5 @@ def _preprocess_chm_file_search_pattern(magic_value_config):
 # apply_magic_value_config_preprocessor
 
 
-def apply_magic_value_config_preprocessor(magic_value_config):
-    return _preprocess_chm_file_search_pattern(magic_value_config)
+def apply_magic_value_config_preprocessor():
+    return _preprocess_chm_file_search_pattern(_crGlobalVariable.magic_value_config)

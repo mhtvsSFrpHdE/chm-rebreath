@@ -1,6 +1,7 @@
 from pathlib import Path as _plPath
 from shutil import copytree as _copytree
 
+import crGlobalVariable as _crGlobalVariable
 import crLog as _crLog
 from crEnvironmentUtil import crCreateFolder as _crCreateFolder
 
@@ -30,9 +31,9 @@ def copy_catalog_html_resource(output_folder_path):
         raise
 
 
-def init_output(environment_config, message_config):
+def init_output():
     global _environment_config_local
     global _message_config_local
 
-    _environment_config_local = environment_config
-    _message_config_local = message_config
+    _environment_config_local = _crGlobalVariable.environment_config
+    _message_config_local = _crGlobalVariable.message_config
