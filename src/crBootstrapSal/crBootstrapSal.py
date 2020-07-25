@@ -1,5 +1,7 @@
 # Load project modules
 import crConfigSal as _crConfig  # NOQA: E402
+import crArgumentSal as crArgument  # NOQA: E402
+import crInputSal as crInput  # NOQA: E402
 import crCore  # NOQA: E402
 import crEnvironmentSal as crEnvironment  # NOQA: E402
 import crOutput  # NOQA: E402
@@ -20,6 +22,7 @@ def _apply_config_preprocessor():
 
 def _init_any_other_module_requires_config():
     # Init basic module
+    crInput.init_input_sal()
     crEnvironment.init_environment_sal()
 
     # crCore
@@ -39,7 +42,3 @@ def _init_any_other_module_requires_config():
 # Then use preprocessed config to initialize other module
 _apply_config_preprocessor()
 _init_any_other_module_requires_config()
-
-# After infrastructure loaded, prepare command line arguments
-import crArgumentSal as crArgument  # NOQA: E402
-import crInputSal as crInput  # NOQA: E402
